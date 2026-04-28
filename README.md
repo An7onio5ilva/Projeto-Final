@@ -1,9 +1,9 @@
 **UF9197 -- Projecto Final**
 
-**Curso:** Técnico Especialista em Cibersegurança (CET103)\
-**Formador:** Fernando Ruela\
-**Formandos:** António Silva, Márcia Lima e Mateus Silva\
+**Curso:** Técnico Especialista em Cibersegurança
 **Data:** Março de 2026
+
+**NOTA:** Este trabalho foi realizado em conjunto com mais dois colegas. As secções aqui partilhadas representam exclusivamente a minha parte e o meu contributo para o projeto final.
 
 # Índice
 - Capítulo 1

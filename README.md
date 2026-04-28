@@ -8,246 +8,241 @@
 # Índice
 - Capítulo 1
 
-- 1.1 Introdução
+- [Introdução](#introdução)
 
-- 1.2 Diagrama de rede
+- [Diagrama de rede](#diagrama-de-rede)
 
-- 1.3 Tabela Completa de Endereços IP --- Grupo AMM
+- [Tabela Completa de Endereços IP --- Grupo AMM](#tabela-completa-de-endereços-ip-grupo-amm)
 
-- 1.4 Ambiente de Pré-Produção --- Simulação com VyOS
+- [Ambiente de Pré-Produção --- Simulação com VyOS](#ambiente-de-pré-produção-simulação-com-vyos)
 
--  Edição Vyos
+- [Edição Vyos](#edição-vyos)
 
 - Capítulo 2
 
-- 2.1 Configuração da Infraestrutura de Rede (AMM)
+- [Configuração da Infraestrutura de Rede (AMM)](#configuração-da-infraestrutura-de-rede-amm)
 
--  Implementação e Configuração do Router Cisco 4300 (Router_AMM)
+- [Implementação e Configuração do Router Cisco 4300 (Router_AMM)](#implementação-e-configuração-do-router-cisco-4300-routeramm)
 
--  Comutação e Segmentação de Camada 2 (Switches Huawei S5720S)
+- [Comutação e Segmentação de Camada 2 (Switches Huawei S5720S)](#comutação-e-segmentação-de-camada-2-switches-huawei-s5720s)
 
--  Configuração Técnica do Switch SW1_AMM
+- [Configuração Técnica do Switch SW1_AMM](#configuração-técnica-do-switch-sw1amm)
 
--  Configuração Técnica do Switch SW2_AMM
+- [Configuração Técnica do Switch SW2_AMM](#configuração-técnica-do-switch-sw2amm)
 
--  Gestão e Administração Remota: Resolução de Incompatibilidades SSH
+- [Gestão e Administração Remota: Resolução de Incompatibilidades SSH](#gestão-e-administração-remota-resolução-de-incompatibilidades-ssh)
 
 - Capítulo 3
 
-- 3.1 OPNsense -- Instalação
+- [OPNsense -- Instalação](#opnsense-instalação)
 
--  Configuração dos interfaces do OPNSense.
+- [Configuração dos interfaces do OPNSense.](#configuração-dos-interfaces-do-opnsense)
 
--  Configuração inicial através do Wizard.
+- [Configuração inicial através do Wizard.](#configuração-inicial-através-do-wizard)
 
--  OPT1 (em2) - Configuração
+- [OPT1 (em2) - Configuração](#opt1-em2-configuração)
 
-- 3.2 Criar a Autoridade de Certificação (CA) e Certificado no OPNsense
+- [Criar a Autoridade de Certificação (CA) e Certificado no OPNsense](#criar-a-autoridade-de-certificação-ca-e-certificado-no-opnsense)
 
-- 3.3 Configuração do Servidor OpenVPN Roadwarrior no OPNsense (MarteSuf)
+- [Configuração do Servidor OpenVPN Roadwarrior no OPNsense (MarteSuf)](#configuração-do-servidor-openvpn-roadwarrior-no-opnsense-martesuf)
 
-- 3.4 Regras de Firewall
+- [Regras de Firewall](#regras-de-firewall)
 
--  Regra na WAN (para aceitar ligações OpenVPN)
+- [Regra na WAN (para aceitar ligações OpenVPN)](#regra-na-wan-para-aceitar-ligações-openvpn)
 
--  Regra na interface OpenVPN (para os clientes acederem à Green)
+- [Regra na interface OpenVPN (para os clientes acederem à Green)](#regra-na-interface-openvpn-para-os-clientes-acederem-à-green)
 
--  Regra específica --- RDP sim, PING não
+- [Regra específica --- RDP sim, PING não](#regra-específica-rdp-sim-ping-não)
 
--  Gerar o ficheiro .ovpn
+- [Gerar o ficheiro .ovpn](#gerar-o-ficheiro-ovpn)
 
-- 3.4.2 Testar no cliente Windows 11 (winclient_red - WAN Interna)
+- [Testar no cliente Windows 11 (winclient_red - WAN Interna)](#testar-no-cliente-windows-11-winclientred-wan-interna)
 
--  Instalar o OpenVPN Connect no cliente Windows 11 da WAN Interna (VLAN 10 RED):
+- [Instalar o OpenVPN Connect no cliente Windows 11 da WAN Interna (VLAN 10 RED):](#instalar-o-openvpn-connect-no-cliente-windows-11-da-wan-interna-vlan-10-red)
 
 - Login através da OpnVpn efetuado com sucesso
 
--  Conectar via RDP ao Windows Server
+- [Conectar via RDP ao Windows Server](#conectar-via-rdp-ao-windows-server)
 
-- 3.4.3 NAT para internet funcionar através da VPN no MarteSuf
+- [NAT para internet funcionar através da VPN no MarteSuf](#nat-para-internet-funcionar-através-da-vpn-no-martesuf)
 
-- 3.5 Configurar o Suricata no OPNsense (MarteSuf)
+- [Configurar o Suricata no OPNsense (MarteSuf)](#configurar-o-suricata-no-opnsense-martesuf)
 
--  Criação de regra User defined
+- [Criação de regra User defined](#criação-de-regra-user-defined)
 
-- 3.6 VPN IPSec entre MarteSuf (OPNsense) e VenusSuf (PFsense)
+- [VPN IPSec entre MarteSuf (OPNsense) e VenusSuf (PFsense)](#vpn-ipsec-entre-martesuf-opnsense-e-venussuf-pfsense)
 
-- 3.6.1 MarteSuf (OPNsense)
+- [MarteSuf (OPNsense)](#martesuf-opnsense)
 
--  Pre-Shared Key
+- [Pre-Shared Key](#pre-shared-key)
 
--  Autenticação
+- [Autenticação](#autenticação)
 
--  Child SAs (Phase 2)
+- [Child SAs (Phase 2)](#child-sas-phase-2)
 
--  Regras de Firewall
+- [Regras de Firewall](#regras-de-firewall)
 
--  Configurar o Interface IPSec para gerir o tráfego que circula dentro
-do túnel
+- [Configurar o Interface IPSec para gerir o tráfego que circula dentro do túnel](#configurar-o-interface-ipsec-para-gerir-o-tráfego-que-circula-dentro-do-túnel)
 
--  Validação da conexão IPsec
+- [Validação da conexão IPsec](#validação-da-conexão-ipsec)
 
-- 3.7 Configurar o OPNsense (MarteSuf) para enviar logs para o syslog-ng
+- [Configurar o OPNsense (MarteSuf) para enviar logs para o syslog-ng](#configurar-o-opnsense-martesuf-para-enviar-logs-para-o-syslog-ng)
 
--  Configurar o destino remoto no OPNsense
+- [Configurar o destino remoto no OPNsense](#configurar-o-destino-remoto-no-opnsense)
 
--  Regra de Firewall para Envio de Logs (Syslog)
+- [Regra de Firewall para Envio de Logs (Syslog)](#regra-de-firewall-para-envio-de-logs-syslog)
 
--  Definir gateway para a interface LAN.
+- [Definir gateway para a interface LAN.](#definir-gateway-para-a-interface-lan)
 
-- 3.8 Configuração de Rota para IPSec --- OPNsense MarteSuf
+- [Configuração de Rota para IPSec --- OPNsense MarteSuf](#configuração-de-rota-para-ipsec-opnsense-martesuf)
 
--  Criar o Gateway
+- [Criar o Gateway](#criar-o-gateway)
 
--  Adicionar a rota permanente
+- [Adicionar a rota permanente](#adicionar-a-rota-permanente)
 
 - Capítulo 4
 
-- 4.1 Linux Mint -- Wazuh Server (alínea 6.2.3.)
+- [Linux Mint -- Wazuh Server (alínea 6.2.3.)](#linux-mint-wazuh-server-alínea-623)
 
-- 4.1.1 Instalação do Linux Mint
+- [Instalação do Linux Mint](#instalação-do-linux-mint)
 
-- 4.2 Instalação do Wazuh-Manager
+- [Instalação do Wazuh-Manager](#instalação-do-wazuh-manager)
 
-- 4.3 Implementação e Configuração de Agentes Wazuh
+- [Implementação e Configuração de Agentes Wazuh](#implementação-e-configuração-de-agentes-wazuh)
 
--  Instalação do Wazuh-Agent no Windows Server
+- [Instalação do Wazuh-Agent no Windows Server](#instalação-do-wazuh-agent-no-windows-server)
 
--  Instalação do Wazuh-Agent no Windows Cliente (winclient -- green
-zone)
+- [Instalação do Wazuh-Agent no Windows Cliente (winclient -- green zone)](#instalação-do-wazuh-agent-no-windows-cliente-winclient-green-zone)
 
--  Instalação do Wazuh-Agent no Windows 10 (Venus)
+- [Instalação do Wazuh-Agent no Windows 10 (Venus)](#instalação-do-wazuh-agent-no-windows-10-venus)
 
--  Instalação do Wazuh-Agent no Ubuntu Syslog (Venus)
+- [Instalação do Wazuh-Agent no Ubuntu Syslog (Venus)](#instalação-do-wazuh-agent-no-ubuntu-syslog-venus)
 
--  Instalação do Wazuh-Agent no Ubuntu Nessus (Venus)
+- [Instalação do Wazuh-Agent no Ubuntu Nessus (Venus)](#instalação-do-wazuh-agent-no-ubuntu-nessus-venus)
 
--  Instalação do Wazuh-Agent no Win Core (Orange)
+- [Instalação do Wazuh-Agent no Win Core (Orange)](#instalação-do-wazuh-agent-no-win-core-orange)
 
--  Instalação do Wazuh-Agent no Debian-WAF
+- [Instalação do Wazuh-Agent no Debian-WAF](#instalação-do-wazuh-agent-no-debian-waf)
 
-- 4.4 Integração Suricata no Wazuh
+- [Integração Suricata no Wazuh](#integração-suricata-no-wazuh)
 
--  Configuração do Wazuh Manager para Receção de Syslog
+- [Configuração do Wazuh Manager para Receção de Syslog](#configuração-do-wazuh-manager-para-receção-de-syslog)
 
--  Configurar o OPNsense para enviar logs do Suricata para o Wazuh
+- [Configurar o OPNsense para enviar logs do Suricata para o Wazuh](#configurar-o-opnsense-para-enviar-logs-do-suricata-para-o-wazuh)
 
--  Implementação do Descodificador (Suricata Decoder)
+- [Implementação do Descodificador (Suricata Decoder)](#implementação-do-descodificador-suricata-decoder)
 
--  Implementação de Regras de Alerta (Suricata Rules)
+- Implementação de Regras de Alerta (Suricata Rules)
 
--  Simulação de Ataque DoS (Kali Linux) e Deteção em Tempo Real.
+- [Simulação de Ataque DoS (Kali Linux) e Deteção em Tempo Real.](#simulação-de-ataque-dos-kali-linux-e-deteção-em-tempo-real)
 
-- 4.5 Encaminhamento de Alertas para Servidor Externo (Syslog-ng)
+- [Encaminhamento de Alertas para Servidor Externo (Syslog-ng)](#encaminhamento-de-alertas-para-servidor-externo-syslog-ng)
 
--  Edição do Ficheiro de Configuração ossec.conf
+- Edição do Ficheiro de Configuração ossec.conf
 
--  Implementação do Bloco de Configuração de Saída (Syslog Output)
+- [Implementação do Bloco de Configuração de Saída (Syslog Output)](#implementação-do-bloco-de-configuração-de-saída-syslog-output)
 
--  Finalização e Reinício do Serviço Wazuh Manager
+- [Finalização e Reinício do Serviço Wazuh Manager](#finalização-e-reinício-do-serviço-wazuh-manager)
 
-- 4.6 Threat Hunting e Deteção de Incidentes
+- [Threat Hunting e Deteção de Incidentes](#threat-hunting-e-deteção-de-incidentes)
 
--  Ataque DoS: Kali Linux (Zona Red) via hping3
+- [Ataque DoS: Kali Linux (Zona Red) via hping3](#ataque-dos-kali-linux-zona-red-via-hping3)
 
--  Análise de Movimento Lateral e Escalamento de Privilégios: Do Kali ao
-Windows Server
+- [Análise de Movimento Lateral e Escalamento de Privilégios: Do Kali ao Windows Server](#análise-de-movimento-lateral-e-escalamento-de-privilégios-do-kali-ao-windows-server)
 
--  Deteção e Mitigação de Ameaça Externa Real (Caso de Estudo)
+- [Deteção e Mitigação de Ameaça Externa Real (Caso de Estudo)](#deteção-e-mitigação-de-ameaça-externa-real-caso-de-estudo)
 
-- 4.6.2 Conclusão: Eficácia da Monitorização e Resposta a Incidentes
+- [Conclusão: Eficácia da Monitorização e Resposta a Incidentes](#conclusão-eficácia-da-monitorização-e-resposta-a-incidentes)
 
 - Capítulo 5
 
-- 5.1 Configuração do Controlador de Domínio: Microsoft Windows Server
+- [Configuração do Controlador de Domínio: Microsoft Windows Server](#configuração-do-controlador-de-domínio-microsoft-windows-server)
 
-- 5.1.1 Introdução
+- [Introdução](#introdução)
 
-- 5.1.2 Instalação e Configuração de Funções
+- [Instalação e Configuração de Funções](#instalação-e-configuração-de-funções)
 
-- 5.1.3 Promoção do Servidor: Implementação do Active Directory Domain
-Services (AD DS) Introdução
+- [Promoção do Servidor: Implementação do Active Directory Domain Services (AD DS) Introdução](#promoção-do-servidor-implementação-do-active-directory-domain-services-ad-ds-introdução)
 
-- 5.1.4 Configuração do Active Directory Domain Services (AD DS)
+- [Configuração do Active Directory Domain Services (AD DS)](#configuração-do-active-directory-domain-services-ad-ds)
 
-- 5.1.5 Configuração e Gestão do Serviço DNS
+- [Configuração e Gestão do Serviço DNS](#configuração-e-gestão-do-serviço-dns)
 
-- 5.1.6 Configuração do Serviço DHCP
+- [Configuração do Serviço DHCP](#configuração-do-serviço-dhcp)
 
-- 5.1.7 Active Directory -- Estrutura Lógica (Ous, Grupos e Utilizadores)
+- [Active Directory -- Estrutura Lógica (Ous, Grupos e Utilizadores)](#active-directory-estrutura-lógica-ous-grupos-e-utilizadores)
 
--  Estruturação Hierárquica de Unidades Organizativas (OUs)
+- [Estruturação Hierárquica de Unidades Organizativas (OUs)](#estruturação-hierárquica-de-unidades-organizativas-ous)
 
--  Implementação de Grupos de Segurança Globais
+- [Implementação de Grupos de Segurança Globais](#implementação-de-grupos-de-segurança-globais)
 
--  Configuração de Subunidades Organizativas (Sub-OUs)
+- [Configuração de Subunidades Organizativas (Sub-OUs)](#configuração-de-subunidades-organizativas-sub-ous)
 
--  Provisionamento e Alocação de Utilizadores
+- [Provisionamento e Alocação de Utilizadores](#provisionamento-e-alocação-de-utilizadores)
 
--  Associação de Utilizadores aos Grupos de Segurança
+- [Associação de Utilizadores aos Grupos de Segurança](#associação-de-utilizadores-aos-grupos-de-segurança)
 
-- 5.1.8 Administração e Gestão de Políticas de Grupo (GPO)
+- [Administração e Gestão de Políticas de Grupo (GPO)](#administração-e-gestão-de-políticas-de-grupo-gpo)
 
--  Configuração de Políticas de Segurança de Conta ao Nível de Domínio
+- [Configuração de Políticas de Segurança de Conta ao Nível de Domínio](#configuração-de-políticas-de-segurança-de-conta-ao-nível-de-domínio)
 
-- 5.1.9 Configuração de Diretivas de Firewall do Windows (Zona Green)
+- [Configuração de Diretivas de Firewall do Windows (Zona Green)](#configuração-de-diretivas-de-firewall-do-windows-zona-green)
 
--  Replicação da Política de Firewall para as Restantes Localizações
+- [Replicação da Política de Firewall para as Restantes Localizações](#replicação-da-política-de-firewall-para-as-restantes-localizações)
 
--  Implementação de Diretivas de Restrição de Início de Sessão (Logon)
+- [Implementação de Diretivas de Restrição de Início de Sessão (Logon)](#implementação-de-diretivas-de-restrição-de-início-de-sessão-logon)
 
--  Propagação e Validação das Políticas de Grupo (GPO)
+- [Propagação e Validação das Políticas de Grupo (GPO)](#propagação-e-validação-das-políticas-de-grupo-gpo)
 
-- 5.2 Implementação de NPS/RADIUS para Autenticação OpenVPN (Exclusiva
-IT)
+- [Implementação de NPS/RADIUS para Autenticação OpenVPN (Exclusiva IT)](#implementação-de-npsradius-para-autenticação-openvpn-exclusiva-it)
 
--  Configuração no Windows Server 2022:
+- [Configuração no Windows Server 2022:](#configuração-no-windows-server-2022)
 
--  Autorização do NPS no Domínio
+- [Autorização do NPS no Domínio](#autorização-do-nps-no-domínio)
 
--  Configuração do RADIUS Client (OPNsense)
+- [Configuração do RADIUS Client (OPNsense)](#configuração-do-radius-client-opnsense)
 
--  Criação de Diretivas de Rede (Network Policies)
+- [Criação de Diretivas de Rede (Network Policies)](#criação-de-diretivas-de-rede-network-policies)
 
-- Identificação da Diretiva de Rede
+- [Identificação da Diretiva de Rede](#identificação-da-diretiva-de-rede)
 
--  Integração e Validação do Servidor RADIUS na OPNsense
+- [Integração e Validação do Servidor RADIUS na OPNsense](#integração-e-validação-do-servidor-radius-na-opnsense)
 
--  Configuração do Método de Autenticação Global
+- [Configuração do Método de Autenticação Global](#configuração-do-método-de-autenticação-global)
 
-- 5.3 Configuração de Recursos Partilhados no Windows Server
+- [Configuração de Recursos Partilhados no Windows Server](#configuração-de-recursos-partilhados-no-windows-server)
 
--  Configuração de Partilha Avançada e Permissões de Rede
+- [Configuração de Partilha Avançada e Permissões de Rede](#configuração-de-partilha-avançada-e-permissões-de-rede)
 
--  Configuração de Permissões de Segurança (NTFS)
+- [Configuração de Permissões de Segurança (NTFS)](#configuração-de-permissões-de-segurança-ntfs)
 
--  Atribuição de Privilégios NTFS ao Utilizador de Serviço
+- [Atribuição de Privilégios NTFS ao Utilizador de Serviço](#atribuição-de-privilégios-ntfs-ao-utilizador-de-serviço)
 
--  Ajuste de Diretivas de Firewall (Tráfego SMB)
+- [Ajuste de Diretivas de Firewall (Tráfego SMB)](#ajuste-de-diretivas-de-firewall-tráfego-smb)
 
-- 5.4 Ativação do Protocolo de Ambiente de Trabalho Remoto (RDP)
+- [Ativação do Protocolo de Ambiente de Trabalho Remoto (RDP)](#ativação-do-protocolo-de-ambiente-de-trabalho-remoto-rdp)
 
--  Configuração de Direitos de Acesso RDP via Group Policy
+- [Configuração de Direitos de Acesso RDP via Group Policy](#configuração-de-direitos-de-acesso-rdp-via-group-policy)
 
-- 5.5 Conclusão da Configuração do Windows Server (DC)
+- [Conclusão da Configuração do Windows Server (DC)](#conclusão-da-configuração-do-windows-server-dc)
 
 - Capítulo 6
 
-- 6.1 Implementação do Cliente Windows 11 (Zona Green)
+- [Implementação do Cliente Windows 11 (Zona Green)](#implementação-do-cliente-windows-11-zona-green)
 
--  Integração da Estação de Trabalho no Domínio (Domain Join)
+- [Integração da Estação de Trabalho no Domínio (Domain Join)](#integração-da-estação-de-trabalho-no-domínio-domain-join)
 
--  Gestão de Objetos de Computador no Active Directory
+- [Gestão de Objetos de Computador no Active Directory](#gestão-de-objetos-de-computador-no-active-directory)
 
-- 6.2 Conclusão da Configuração do Windows 11 (Zona Green)
+- [Conclusão da Configuração do Windows 11 (Zona Green)](#conclusão-da-configuração-do-windows-11-zona-green)
 
 - Capítulo 7
 
-- 7.1 Implementação do Agente NXLog no Windows Server Core
+- [Implementação do Agente NXLog no Windows Server Core](#implementação-do-agente-nxlog-no-windows-server-core)
 
 - Capítulo 8
 
-- 8.1 Configuração do Serviço Rsyslog no WAF (Debian)
+- [Configuração do Serviço Rsyslog no WAF (Debian)](#configuração-do-serviço-rsyslog-no-waf-debian)
 
 - Glossário
 
@@ -262,8 +257,7 @@ IT)
 ## Introdução
 
 O presente trabalho foi desenvolvido no âmbito do curso CET103 ---
-Técnico Especialista em CiberSegurança, e tem como objetivo a conceção,
-implementação e documentação de uma infraestrutura de segurança de redes
+Técnico Especialista em CiberSegurança, e tem como objetivo a conceção, implementação e documentação de uma infraestrutura de segurança de redes
 completa, simulando um ambiente empresarial real em contexto
 virtualizado.
 
@@ -271,9 +265,7 @@ A infraestrutura desenvolvida pelo Grupo AMM assenta numa rede física
 constituída por um router Cisco 4300 e dois switches Huawei S5720S,
 sobre a qual foram implementadas múltiplas zonas de segurança
 segmentadas através de VLANs. A partir desta base, foram construídas
-duas firewalls distintas --- VenusSuf, baseada em pfSense, e MarteSuf,
-baseada em OPNsense --- cada uma com as suas zonas DMZ (Orange) e rede
-interna (Green), replicando a arquitetura típica de uma organização com
+duas firewalls distintas --- VenusSuf, baseada em pfSense, e MarteSuf, baseada em OPNsense --- cada uma com as suas zonas DMZ (Orange) e rede interna (Green), replicando a arquitetura típica de uma organização com
 necessidades reais de segurança perimetral.
 
 O projeto abrange um conjunto alargado de tecnologias e competências da
@@ -288,9 +280,7 @@ executar respostas ativas automáticas. O logging centralizado foi
 assegurado através de uma stack syslog-ng, Loki, Promtail e Grafana. A
 análise de vulnerabilidades foi realizada com o Nessus sobre todas as
 máquinas virtuais do projeto. Foram ainda implementadas três VPNs ---
-Wireguard roadwarrior, OpenVPN roadwarrior com autenticação RADIUS via
-Active Directory, e IPSec site-to-site entre as duas firewalls --- e um
-Active Directory com utilizadores, grupos e OUs organizadas por
+Wireguard roadwarrior, OpenVPN roadwarrior com autenticação RADIUS via Active Directory, e IPSec site-to-site entre as duas firewalls --- e um Active Directory com utilizadores, grupos e OUs organizadas por
 departamento e localização geográfica.
 
 A componente ofensiva do projeto, desenvolvida a partir da zona Red (WAN
@@ -313,16 +303,14 @@ utilizadas em ambientes de produção profissionais.
 O presente diagrama ilustra a **arquitetura de rede lógica** de um
 ambiente de laboratório focado em cibersegurança. A infraestrutura
 baseia-se numa estratégia de **segmentação rigorosa**, utilizando
-firewalls (PFSense e OpnSense) para isolar zonas distintas --- desde a
-rede de gestão e DMZs até às áreas de monitorização e ataque (Kali
+firewalls (PFSense e OpnSense) para isolar zonas distintas --- desde a rede de gestão e DMZs até às áreas de monitorização e ataque (Kali
 Linux). Esta estrutura foi desenhada para simular um ambiente de
 produção real, integrando tecnologias de VPN (WireGuard, OpenVPN, IPsec)
 e ferramentas de auditoria como o Nessus e o Wazuh.
 
 ![](./images/media/image2.png)
 
-*Figura 1 - Topologia lógica da arquitetura de rede do laboratório,
-evidenciando a segmentação por VLANs, zonas DMZ (Venus e Marte) e a
+*Figura 1 - Topologia lógica da arquitetura de rede do laboratório, evidenciando a segmentação por VLANs, zonas DMZ (Venus e Marte) e a
 integração de mecanismos de segurança (PFSense, OpnSense e túneis VPN).*
 
 ## Tabela Completa de Endereços IP --- Grupo AMM
@@ -436,9 +424,7 @@ e IPSec implementados no projeto
 ## Ambiente de Pré-Produção --- Simulação com VyOS
 
 Dado que o projeto foi desenvolvido em equipa por três elementos, e que
-o acesso ao hardware físico --- Router Cisco 4300 e Switches Huawei
-S5720S --- estava limitado ao ambiente de sala, foi necessário encontrar
-uma solução que permitisse adiantar e validar o trabalho de forma
+o acesso ao hardware físico --- Router Cisco 4300 e Switches Huawei S5720S --- estava limitado ao ambiente de sala, foi necessário encontrar uma solução que permitisse adiantar e validar o trabalho de forma
 independente. Para esse efeito, recorreu-se ao VyOS, um router virtual
 de código aberto, como ambiente de pré-produção doméstico.
 
@@ -704,8 +690,7 @@ service password-encryption
 
 hostname Router_AMM
 
-**! Desativar o novo modelo AAA (usamos autenticação local simples - não
-precisamos de RADIUS)**
+**! Desativar o novo modelo AAA (usamos autenticação local simples - não precisamos de RADIUS)**
 
 no aaa new-model
 
@@ -755,8 +740,7 @@ dns-server 8.8.8.8
 ! ==================== INTERFACES FÍSICAS E SUB-INTERFACES
 ====================
 
-**! Interface física principal (sem IP - apenas base para
-sub-interfaces)**
+**! Interface física principal (sem IP - apenas base para sub-interfaces)**
 
 interface GigabitEthernet0/0/0
 
@@ -800,8 +784,7 @@ ip address 10.30.50.129 255.255.255.248
 
 ip nat inside
 
-**! Sub-interface VLAN 103 - Gestão (acesso SSH exclusivo aos
-equipamentos)**
+**! Sub-interface VLAN 103 - Gestão (acesso SSH exclusivo aos equipamentos)**
 
 interface GigabitEthernet0/0/0.103
 
@@ -1136,87 +1119,75 @@ As figuras seguintes demonstram as configurações implementadas.
 
 ![](./images/media/image6.png)
 
-*Figura 6 - Excerto da configuração corrente (running-config) do
-Router_AMM, evidenciando a definição do hostname, encriptação de
+*Figura 6 - Excerto da configuração corrente (running-config) do Router_AMM, evidenciando a definição do hostname, encriptação de
 passwords e a configuração do pool DHCP para a Zona RED.*
 
 ![](./images/media/image7.png)
 
-*Figura 7 - Configuração de interfaces no Router_AMM, destacando a
-implementação de redundância via protocolo VRRP na interface WAN e a
+*Figura 7 - Configuração de interfaces no Router_AMM, destacando a implementação de redundância via protocolo VRRP na interface WAN e a
 segmentação lógica de rede através de sub-interfaces com encapsulamento
 802.1Q (dot1Q) para as zonas RED e Venus_WAN, com as respetivas regras
 de NAT (inside/outside) aplicadas.*
 
 ![](./images/media/image8.png)
 
-*Figura 8 - Configuração de interfaces e protocolos de encaminhamento no
-Router_AMM, evidenciando a segmentação por sub-interfaces (VLAN 30 e
+*Figura 8 - Configuração de interfaces e protocolos de encaminhamento no Router_AMM, evidenciando a segmentação por sub-interfaces (VLAN 30 e
 103), a implementação de redundância de gateway via VRRP na interface
 WAN e a ativação do NAT Overload com registo de auditoria (syslog).*
 
 ![](./images/media/image9.png)
 
-*Figura 9 - Configuração de segurança e gestão do Router_AMM,
-evidenciando as rotas estáticas para a rede externa (CINEL), a ativação
+*Figura 9 - Configuração de segurança e gestão do Router_AMM, evidenciando as rotas estáticas para a rede externa (CINEL), a ativação
 do SSH v2 e a implementação de ACLs Standard (1 e 10) para controlo de
 tráfego NAT e restrição de acesso administrativo às linhas VTY.*
 
 ![](./images/media/image10.png)
 
-*Figura 10 - Verificação do estado das interfaces no Router_AMM através
-do comando show ip interface brief, confirmando a operacionalidade das
+*Figura 10 - Verificação do estado das interfaces no Router_AMM através do comando show ip interface brief, confirmando a operacionalidade das
 sub-interfaces (VLANs 10, 20, 30 e 103) e a conectividade da interface
 física GigabitEthernet0/0/1 à rede WAN.*
 
 ![](./images/media/image11.png)
 
-*Figura 11 - Verificação das Listas de Controlo de Acesso através do
-comando show access-lists, evidenciando as permissões da ACL 1 para
+*Figura 11 - Verificação das Listas de Controlo de Acesso através do comando show access-lists, evidenciando as permissões da ACL 1 para
 tráfego NAT e a monitorização de acessos na ACL 10, onde o contador
 de matches confirma a atividade de rede das zonas autorizadas.*
 
 ![](./images/media/image12.png)
 
-*Figura 12 - Verificação dos parâmetros de acesso remoto no Router_AMM,
-confirmando a ativação do protocolo SSH v2 com cifras de encriptação
+*Figura 12 - Verificação dos parâmetros de acesso remoto no Router_AMM, confirmando a ativação do protocolo SSH v2 com cifras de encriptação
 fortes (AES-CTR e HMAC-SHA2-256) e a monitorização de sessões
 administrativas ativas de utilizadores autenticados.*
 
 ![](./images/media/image13.png)
 
-*Figura 13 - Configuração de VLANs e interfaces de tronco no switch
-SW1_AMM, demonstrando a criação em bloco das VLANs 10, 20, 30 e 103, e a
+*Figura 13 - Configuração de VLANs e interfaces de tronco no switch SW1_AMM, demonstrando a criação em bloco das VLANs 10, 20, 30 e 103, e a
 definição do modo Trunk (802.1Q) nas portas de interligação para
 permitir a passagem do tráfego segmentado entre o router e os restantes
 switches.*
 
 ![](./images/media/image14.png)
 
-*Figura 14 - Configuração de interfaces no switch SW1_AMM, demonstrando
-a definição do modo Trunk (802.1Q) com permissão para as VLANs do
+*Figura 14 - Configuração de interfaces no switch SW1_AMM, demonstrando a definição do modo Trunk (802.1Q) com permissão para as VLANs do
 projeto e a configuração de um porto em modo Access atribuído à VLAN 10
 (Zona Red) para a ligação da máquina de auditoria.*
 
 ![](./images/media/image15.png)
 
-*Figura 15 - Configuração de segurança local e ativação de interfaces no
-switch SW1_AMM, demonstrando a definição de passwords cifradas para a
+*Figura 15 - Configuração de segurança local e ativação de interfaces no switch SW1_AMM, demonstrando a definição de passwords cifradas para a
 consola e o comando undo shutdown para a ativação física dos portos
 GigabitEthernet destinados às zonas Venus e Red.*
 
 ![](./images/media/image16.png)
 
-*Figura 16 - Configuração de interfaces de acesso no switch SW1_AMM,
-evidenciando a atribuição da porta GigabitEthernet0/0/3 à VLAN 30
+*Figura 16 - Configuração de interfaces de acesso no switch SW1_AMM, evidenciando a atribuição da porta GigabitEthernet0/0/3 à VLAN 30
 (OPNsense) e da porta GigabitEthernet0/0/4 à VLAN 103 (Gestão),
 incluindo a ativação física das mesmas através do comando undo
 shutdown.*
 
 ![](./images/media/image17.png)
 
-*Figura 17 - Configuração da interface lógica Vlanif103 no switch
-SW1_AMM, demonstrando a atribuição do endereço IP estático 10.103.50.2 à
+*Figura 17 - Configuração da interface lógica Vlanif103 no switch SW1_AMM, demonstrando a atribuição do endereço IP estático 10.103.50.2 à
 VLAN de Gestão, permitindo a comunicação administrativa do switch com o
 router e os restantes dispositivos da rede.*
 
@@ -1248,16 +1219,14 @@ comprometer a segurança global do sistema operativo Debian.
 
 ![](./images/media/image18.png)
 
-*Figura 18 - Configuração de **Aliases** de administração no servidor
-Debian (Wazuh), evidenciando a criação de uma instrução personalizada no
+*Figura 18 - Configuração de **Aliases** de administração no servidor Debian (Wazuh), evidenciando a criação de uma instrução personalizada no
 ficheiro .bashrc para forçar o uso de algoritmos de troca de chaves
 compatíveis com o Router_AMM, contornando as restrições de segurança
 nativas do OpenSSH moderno.*
 
 ![](./images/media/image19.png)
 
-*Figura 19 - Demonstração da administração remota entre o servidor
-Debian (Wazuh) e o Router_AMM, evidenciando a utilização do **alias
+*Figura 19 - Demonstração da administração remota entre o servidor Debian (Wazuh) e o Router_AMM, evidenciando a utilização do **alias
 SSH** para estabelecer a ligação e a subsequente verificação do estado
 das interfaces (VLANs 10, 20, 30 e 103) através do comando show ip
 interface brief.*
@@ -1272,8 +1241,7 @@ moderno com o Router e Switches da infraestrutura.*
 
 ![](./images/media/image21.png)
 
-*Figura 21 - Configuração e validação de funções personalizadas no
-PowerShell (Windows 11), evidenciando a criação do ficheiro de perfil
+*Figura 21 - Configuração e validação de funções personalizadas no PowerShell (Windows 11), evidenciando a criação do ficheiro de perfil
 (\$PROFILE) e o ajuste da política de execução (Execution Policy) para
 permitir a utilização do alias ssh-router, culminando no acesso
 bem-sucedido à consola do Router_AMM.*
@@ -1288,8 +1256,7 @@ autorizadas.*
 
 ![](./images/media/image23.png)
 
-*Figura 23 - Consola do servidor Wazuh (Debian) demonstrando a análise
-de logs de respostas ativas (active-responses.log) seguida do acesso
+*Figura 23 - Consola do servidor Wazuh (Debian) demonstrando a análise de logs de respostas ativas (active-responses.log) seguida do acesso
 administrativo ao switch SW1_AMM via alias SSH, onde se valida a
 configuração da ACL 2000 para controlo de acessos baseada em IPs de
 gestão específicos.*
@@ -1304,8 +1271,7 @@ rede de gestão e da rede de utilizadores autorizada.*
 
 ![](./images/media/image25.png)
 
-*Figura 25 - Edição do ficheiro de perfil do PowerShell (\$PROFILE) no
-host Windows, demonstrando a criação da função ssh-router para
+*Figura 25 - Edição do ficheiro de perfil do PowerShell (\$PROFILE) no host Windows, demonstrando a criação da função ssh-router para
 automatizar a inserção de algoritmos de troca de chaves (KexAlgorithms)
 e cifras obsoletas, garantindo o acesso imediato e transparente ao
 Router_AMM a partir da consola.*
@@ -1339,15 +1305,13 @@ instalação estão ilustrados nas figuras seguintes:
 
 ![](./images/media/image26.png)
 
-*Figura 26 -  Interface de consola do **OPNsense** durante a fase de
-arranque em modo Live/Installer, exibindo as chaves de impressão digital
+*Figura 26 -  Interface de consola do **OPNsense** durante a fase de arranque em modo Live/Installer, exibindo as chaves de impressão digital
 (fingerprints) SSH para validação de autenticidade e o prompt de
 autenticação para início do processo de instalação no disco virtual.*
 
 ![](./images/media/image27.png)
 
-*Figura 27 -  Seleção do mapa de teclado (keymap) no instalador do
-OPNsense.*
+*Figura 27 -  Seleção do mapa de teclado (keymap) no instalador do OPNsense.*
 
 ![](./images/media/image28.png)
 
@@ -1356,43 +1320,35 @@ OPNsense.*
 
 ![](./images/media/image29.png)
 
-*Figura 29 -  Seleção do nível de redundância de disco (**ZFS Stripe**)
-no instalador do **OPNsense**.*
+*Figura 29 -  Seleção do nível de redundância de disco (**ZFS Stripe**) no instalador do **OPNsense**.*
 
 ![](./images/media/image30.png)
 
-*Figura 30 -  Seleção do disco virtual (**da0**) para a criação do pool
-de armazenamento **ZFS** no instalador.*
+*Figura 30 -  Seleção do disco virtual (**da0**) para a criação do pool de armazenamento **ZFS** no instalador.*
 
 ![](./images/media/image31.png)
 
-*Figura 31 -  Confirmação de escrita e **formatação do disco** virtual
-para a instalação do sistema.*
+*Figura 31 -  Confirmação de escrita e **formatação do disco** virtual para a instalação do sistema.*
 
 ![](./images/media/image32.png)
 
-*Figura 32 -  Monitorização do **progresso da instalação** e clonagem
-dos ficheiros do sistema OPNsense para o disco.*
+*Figura 32 -  Monitorização do **progresso da instalação** e clonagem dos ficheiros do sistema OPNsense para o disco.*
 
 ![](./images/media/image33.png)
 
-*Figura 33 - Configuração final e alteração da **password do utilizador
-root** no OPNsense.*
+*Figura 33 - Configuração final e alteração da **password do utilizador root** no OPNsense.*
 
 ![](./images/media/image34.png)
 
-*Figura 34 - Definição da palavra-passe para o utilizador root no
-instalador do OPNsense.*
+*Figura 34 - Definição da palavra-passe para o utilizador root no instalador do OPNsense.*
 
 ![](./images/media/image35.png)
 
-*Figura 35 - Finalização da instalação e confirmação de saída do
-instalador do OPNsense.*
+*Figura 35 - Finalização da instalação e confirmação de saída do instalador do OPNsense.*
 
 ![](./images/media/image36.png)
 
-*Figura 36 - Conclusão da instalação e reinício (Reboot now) do sistema
-OPNsense.*
+*Figura 36 - Conclusão da instalação e reinício (Reboot now) do sistema OPNsense.*
 
 Nota: Após a instalação estar concluída, desligamos a máquina, isto
 porque o OpnSense não injecta
@@ -1439,8 +1395,7 @@ aceder ao web GUI.
 
 ![](./images/media/image43.png)
 
-*Figura 43 - Acesso à GUI do OPNSense (IP 172.30.50.97) através do
-browser do Windows Server*
+*Figura 43 - Acesso à GUI do OPNSense (IP 172.30.50.97) através do browser do Windows Server*
 
 ![](./images/media/image44.png)
 
@@ -1450,42 +1405,36 @@ browser do Windows Server*
 
 ![](./images/media/image45.png)
 
-*Figura 45 - Dashboard do OPNSense -- Configuração inicial utilizando o
-Wizard*
+*Figura 45 - Dashboard do OPNSense -- Configuração inicial utilizando o Wizard*
 
 No menu seguinte definimos o hostname, domínio timezone e o IP do DNS
 server
 
 ![](./images/media/image46.png)
 
-*Figura 46 - Dashboard do OPNSense - Configuração inicial utilizando o
-Wizard*
+*Figura 46 - Dashboard do OPNSense - Configuração inicial utilizando o Wizard*
 
 De seguida, definimos o IP do interface WAN e respectivo gateway.
 
 ![](./images/media/image47.png)
 
-*Figura 47 - Dashboard do OPNSense - Configuração inicial utilizando o
-Wizard*
+*Figura 47 - Dashboard do OPNSense - Configuração inicial utilizando o Wizard*
 
 Definimos o IP do interface da LAN.
 
 ![](./images/media/image48.png)
 
-*Figura 48 - Dashboard do OPNSense - Configuração inicial utilizando o
-Wizard*
+*Figura 48 - Dashboard do OPNSense - Configuração inicial utilizando o Wizard*
 
 Atribuímos uma password segura.
 
 ![](./images/media/image49.png)
 
-*Figura 49 - Dashboard do OPNSense - Configuração inicial utilizando o
-Wizard*
+*Figura 49 - Dashboard do OPNSense - Configuração inicial utilizando o Wizard*
 
 ![](./images/media/image50.png)
 
-*Figura 50 - Dashboard do OPNSense - Configuração inicial utilizando o
-Wizard - Finalização*
+*Figura 50 - Dashboard do OPNSense - Configuração inicial utilizando o Wizard - Finalização*
 
 ![](./images/media/image51.png)
 
@@ -1533,13 +1482,11 @@ ou desativada** agora que as instalações estão concluídas.
 
 ![](./images/media/image57.png)
 
-*Figura 53 - Dashboard do OPNSense -- Criação de regra para o interface
-OPT1*
+*Figura 53 - Dashboard do OPNSense -- Criação de regra para o interface OPT1*
 
 ## Criar a Autoridade de Certificação (CA) e Certificado no OPNsense
 
-O OpenVPN precisa de certificados para encriptar o túnel - garante que a
-comunicação entre o cliente e o servidor é encriptada. Autentica o
+O OpenVPN precisa de certificados para encriptar o túnel - garante que a comunicação entre o cliente e o servidor é encriptada. Autentica o
 servidor OpenVPN ao cliente, garantindo que o cliente está a ligar ao
 servidor correto e não a um impostor. O certificado é usado para
 autenticar o servidor, não o utilizador.
@@ -1556,8 +1503,7 @@ No OPNsense, vamos a **System à Trust à Authorities**.
 
 ![](./images/media/image58.png)
 
-*Figura 54 - Criação da Autoridade de Certificação (CA) e do Certificado
-no OPNsense*
+*Figura 54 - Criação da Autoridade de Certificação (CA) e do Certificado no OPNsense*
 
 De seguida vamos a **System à Trust à Certificates**.
 
@@ -1575,8 +1521,7 @@ De seguida vamos a **System à Trust à Certificates**.
 
 ![](./images/media/image60.png)
 
-*Figura 55 - Criação da Autoridade de Certificação (CA) e do Certificado
-no OPNsense*
+*Figura 55 - Criação da Autoridade de Certificação (CA) e do Certificado no OPNsense*
 
 ## Configuração do Servidor OpenVPN Roadwarrior no OPNsense (MarteSuf)
 
@@ -1624,15 +1569,13 @@ Vamos a **VPN à OpenVPN à Instances**. Clicamos no botão **(+)**.
 
 ![](./images/media/image66.png)
 
-*Figura 57 - Visualização do Servidor OpenVPN Roadwarrior criado no
-OPNsense (MarteSuf)*
+*Figura 57 - Visualização do Servidor OpenVPN Roadwarrior criado no OPNsense (MarteSuf)*
 
 **Explicação:**
 
 **Server (IPv4): 10.200.50.0/24**
 
-Este campo define a **rede virtual do túnel VPN** --- é uma rede
-completamente nova que não existe fisicamente em lado nenhum. O OPNsense
+Este campo define a **rede virtual do túnel VPN** --- é uma rede completamente nova que não existe fisicamente em lado nenhum. O OPNsense
 vai:
 
 -   Atribuir a si próprio o IP 10.200.50.1 (gateway do túnel)
@@ -1642,13 +1585,11 @@ vai:
 É basicamente uma \"rede imaginária\" que só existe dentro do túnel
 encriptado, para os dois lados terem um IP com que comunicar. Podemos
 usar qualquer rede privada que **não esteja já em uso** no nosso
-ambiente --- usámos o 10.200.50.0/24 por isso mesmo, é uma rede livre no
-nosso esquema.
+ambiente --- usámos o 10.200.50.0/24 por isso mesmo, é uma rede livre no nosso esquema.
 
 Esta configuração cria um servidor VPN do tipo **Roadwarrior** no
 OPNsense, permitindo que utilizadores remotos --- neste caso o Windows
-11 da WAN Interna --- acedam de forma segura à zona Green do MarteSuf
-através de um túnel encriptado.
+11 da WAN Interna --- acedam de forma segura à zona Green do MarteSuf através de um túnel encriptado.
 
 A autenticação é feita via RADIUS integrado com o Active Directory,
 garantindo que apenas utilizadores pertencentes ao grupo IT do domínio
@@ -1698,8 +1639,7 @@ antes de chegarem ao servidor OpenVPN.
 
 -   
 
-Esta regra permite que os clientes VPN, depois de estabelecerem o túnel,
-consigam comunicar com os recursos da zona Green do MarteSuf, como o
+Esta regra permite que os clientes VPN, depois de estabelecerem o túnel, consigam comunicar com os recursos da zona Green do MarteSuf, como o
 Windows Server e o Wazuh. Sem esta regra, mesmo com a VPN ligada, o
 tráfego dos clientes seria bloqueado pelo firewall ao tentar aceder à
 rede interna.
@@ -1712,8 +1652,7 @@ rede interna.
 
 ![](./images/media/image71.png)
 
-*Figura 60 - Regra na interface OpenVPN (para os clientes acederem à
-Green)*
+*Figura 60 - Regra na interface OpenVPN (para os clientes acederem à Green)*
 
 ##### Regra específica --- RDP sim, PING não
 
@@ -1744,8 +1683,7 @@ Server, apenas aceder via RDP.
 
 ![](./images/media/image74.png)
 
-*Figura 61 - Regra de bloqueio o ping (ICMP) dos clientes VPN para a
-zona Green*
+*Figura 61 - Regra de bloqueio o ping (ICMP) dos clientes VPN para a zona Green*
 
 **Regra 2 --- Permitir RDP:**
 
@@ -1798,8 +1736,7 @@ anterior.
 
 *Figura 63 - Regra que permite o restante tráfego (exceto ping)*
 
-Nota: A ordem das regras é importante --- **o Block ICMP tem de estar
-acima das regras Pass**.
+Nota: A ordem das regras é importante --- **o Block ICMP tem de estar acima das regras Pass**.
 
 ![](./images/media/image81.png)
 
@@ -1824,8 +1761,7 @@ Vamos a:
 -   Na linha (none) Exclude certificate from export --- clicamos no
     ícone de download à direita
 
-Este (none) é o correto para RADIUS --- exportamos o **.ovpn** sem
-certificado de cliente, que é exatamente o que precisamos.
+Este (none) é o correto para RADIUS --- exportamos o **.ovpn** sem certificado de cliente, que é exatamente o que precisamos.
 
 ![](./images/media/image82.png)
 
@@ -1836,8 +1772,7 @@ utiliza para estabelecer a ligação. Contém todas as definições
 necessárias como o endereço do servidor, porta, protocolo e o
 certificado da CA. Como a autenticação é feita via RADIUS
 (user/password), não é necessário exportar um certificado de cliente ---
-daí selecionar a opção (none). Este ficheiro é posteriormente importado
-no OpenVPN Connect instalado no Windows 11 da WAN Interna.
+daí selecionar a opção (none). Este ficheiro é posteriormente importado no OpenVPN Connect instalado no Windows 11 da WAN Interna.
 
 ### Testar no cliente Windows 11 (winclient_red - WAN Interna)
 
@@ -1867,12 +1802,10 @@ entre si.
 
 **Resumo:**
 
-**Roadwarrior** --- o utilizador pode estar em qualquer lado (casa,
-café, hotel, etc.) e liga-se ao servidor VPN. É pensada para **pessoas**
+**Roadwarrior** --- o utilizador pode estar em qualquer lado (casa, café, hotel, etc.) e liga-se ao servidor VPN. É pensada para **pessoas**
 que se movem.
 
-**IPSec Site-to-Site** --- liga **duas redes fixas** entre si de forma
-permanente. Por exemplo, a rede do escritório de Lisboa liga à rede do
+**IPSec Site-to-Site** --- liga **duas redes fixas** entre si de forma permanente. Por exemplo, a rede do escritório de Lisboa liga à rede do
 escritório do Porto. As duas firewalls sabem sempre onde estão e a
 ligação é geralmente sempre ativa.
 
@@ -1895,15 +1828,13 @@ ligação é geralmente sempre ativa.
 
 ![](./images/media/image83.png)
 
-*Figura 66 - Download e instalação da OpenVPN do Windows 11 da zona
-Red.*
+*Figura 66 - Download e instalação da OpenVPN do Windows 11 da zona Red.*
 
 O OpenVPN Connect é o cliente VPN instalado no Windows 11 da WAN Interna
 que permite estabelecer o túnel encriptado com o servidor OpenVPN do
 OPNsense. Após importar o ficheiro .ovpn com as configurações do
 servidor, o utilizador autentica-se com as credenciais do domínio ---
-neste caso um utilizador pertencente ao grupo IT --- que são validadas
-pelo servidor RADIUS integrado com o Active Directory do Windows Server
+neste caso um utilizador pertencente ao grupo IT --- que são validadas pelo servidor RADIUS integrado com o Active Directory do Windows Server
 2022.
 
 ![](./images/media/image84.png)
@@ -1928,28 +1859,23 @@ pelo servidor RADIUS integrado com o Active Directory do Windows Server
 
 ![](./images/media/image89.png)
 
-*Figura 72 - Instalação da OpenVPN do Windows 11 da zona Red --
-Importação do ficheiro .ovpn*
+*Figura 72 - Instalação da OpenVPN do Windows 11 da zona Red -- Importação do ficheiro .ovpn*
 
 ![](./images/media/image90.png)
 
-*Figura 73 - Instalação da OpenVPN do Windows 11 da zona Red --
-Importação do ficheiro .ovpn*
+*Figura 73 - Instalação da OpenVPN do Windows 11 da zona Red -- Importação do ficheiro .ovpn*
 
 ![](./images/media/image91.png)
 
-*Figura 74 - Instalação da OpenVPN do Windows 11 da zona Red --
-Importação do ficheiro .ovpn*
+*Figura 74 - Instalação da OpenVPN do Windows 11 da zona Red -- Importação do ficheiro .ovpn*
 
 ![](./images/media/image92.png)
 
-*Figura 75 - Instalação da OpenVPN do Windows 11 da zona Red --
-Importação do ficheiro .ovpn*
+*Figura 75 - Instalação da OpenVPN do Windows 11 da zona Red -- Importação do ficheiro .ovpn*
 
 ![](./images/media/image93.png)
 
-*Figura 76 - Instalação da OpenVPN do Windows 11 da zona Red -- Login
-com as credenciais de um user do IT*
+*Figura 76 - Instalação da OpenVPN do Windows 11 da zona Red -- Login com as credenciais de um user do IT*
 
 ![](./images/media/image94.png)
 
@@ -1974,13 +1900,11 @@ AntMarMat\\plinha / Passw0rd
 
 ![](./images/media/image98.png)
 
-*Figura 81 - Introdução do user do IT com o qual queremos efetuar a
-conexão*
+*Figura 81 - Introdução do user do IT com o qual queremos efetuar a conexão*
 
 ![](./images/media/image99.png)
 
-*Figura 82 - Introdução da password do user do IT com o qual queremos
-efetuar a conexão*
+*Figura 82 - Introdução da password do user do IT com o qual queremos efetuar a conexão*
 
 ![](./images/media/image100.png)
 
@@ -1989,8 +1913,7 @@ efetuar a conexão*
 **Certificate error**
 
 Não é um problema neste caso. Este aviso é normal em ambientes de
-laboratório --- significa apenas que o certificado do Windows Server é
-auto-assinado e não é reconhecido por uma CA pública.
+laboratório --- significa apenas que o certificado do Windows Server é auto-assinado e não é reconhecido por uma CA pública.
 
 Devemos clicar **Yes** para continuar. Em ambiente de produção
 resolvia-se instalando o certificado da CA no cliente.
@@ -2003,13 +1926,11 @@ interna, cumprindo o requisito do enunciado.
 
 ![](./images/media/image101.png)
 
-*Figura 84 - VPN estabelecida, o utilizador acede ao Windows Server via
-Remote Desktop Protocol (RDP)*
+*Figura 84 - VPN estabelecida, o utilizador acede ao Windows Server via Remote Desktop Protocol (RDP)*
 
 ![](./images/media/image102.png)
 
-*Figura 85 - VPN estabelecida, o utilizador acede ao Windows Server via
-Remote Desktop Protocol (RDP)*
+*Figura 85 - VPN estabelecida, o utilizador acede ao Windows Server via Remote Desktop Protocol (RDP)*
 
 ### NAT para internet funcionar através da VPN no MarteSuf
 
@@ -2040,8 +1961,7 @@ Depois testa a internet no winclient_red com a VPN ligada.
 
 ![](./images/media/image104.png)
 
-*Figura 86 - Regra NAT para internet funcionar através da VPN no
-MarteSuf*
+*Figura 86 - Regra NAT para internet funcionar através da VPN no MarteSuf*
 
 Neste momento já é possível aceder à internet com a OpenVpn ligada.
 
@@ -2131,24 +2051,19 @@ importadas. Fazemos **Apply**.
 
 ![](./images/media/image110.png)
 
-*Figura 91 - Services à Intrusion Detection -- Separador Rules do
-Suricata*
+*Figura 91 - Services à Intrusion Detection -- Separador Rules do Suricata*
 
-Ainda no separador **Rules** e pesquisamos por scan --- as regras do
-emerging-scan devem aparecer. Selecionamos todas e clicamos **\"Enable
+Ainda no separador **Rules** e pesquisamos por scan --- as regras do emerging-scan devem aparecer. Selecionamos todas e clicamos **\"Enable
 selected\"** para as ativar. **Devemos verificar se todas estão como
-enabled - ET open/emerging-scan --- port scan ; ET open/emerging-dos ---
-ataques DOS ; ET open/emerging-exploit.**
+enabled - ET open/emerging-scan --- port scan ; ET open/emerging-dos --- ataques DOS ; ET open/emerging-exploit.**
 
 ![](./images/media/image111.png)
 
-*Figura 92 - Services à Intrusion Detection -- Separador Rules do
-Suricata*
+*Figura 92 - Services à Intrusion Detection -- Separador Rules do Suricata*
 
 ![](./images/media/image112.png)
 
-*Figura 93 - Services à Intrusion Detection -- Separador Rules do
-Suricata*
+*Figura 93 - Services à Intrusion Detection -- Separador Rules do Suricata*
 
 ##### Criação de regra User defined 
 
@@ -2181,8 +2096,7 @@ eventos de segurança.
 
 ![](./images/media/image116.png)
 
-*Figura 97 - Visualização dos alertas gerados pelo Suricata através da
-ferramenta TCPDump*
+*Figura 97 - Visualização dos alertas gerados pelo Suricata através da ferramenta TCPDump*
 
 ![](./images/media/image117.png)
 
@@ -2228,8 +2142,7 @@ Vamos a **VPN à IPsec à Pre-Shared Keys** à clicamos **+**:
 
 ![](./images/media/image118.png)
 
-*Figura 99 - Configuração da chave pré-partilhada (**PSK**) no OPNsense
-para autenticação do túnel **IPsec** entre as firewalls MarteSuf e
+*Figura 99 - Configuração da chave pré-partilhada (**PSK**) no OPNsense para autenticação do túnel **IPsec** entre as firewalls MarteSuf e
 VenusSuf.*
 
 **Fase 1 --- Criar a ligação IPSec**
@@ -2272,8 +2185,7 @@ VenusSuf.*
 
 ![](./images/media/image121.png)
 
-*Figura 100 - Configuração das definições gerais da ligação **IPsec** no
-OPNsense, utilizando o protocolo **IKEv2** e especificando o endereço
+*Figura 100 - Configuração das definições gerais da ligação **IPsec** no OPNsense, utilizando o protocolo **IKEv2** e especificando o endereço
 local da interface WAN (**10.30.50.130**) para estabelecer o túnel com o
 VenusSuf.*
 
@@ -2305,8 +2217,7 @@ para adicionar a autenticação:
 
 ![](./images/media/image122.png)
 
-*Figura 101 - Configuração dos parâmetros de autenticação local no
-OPNsense, onde se define o uso de uma **Pre-Shared Key** e o
+*Figura 101 - Configuração dos parâmetros de autenticação local no OPNsense, onde se define o uso de uma **Pre-Shared Key** e o
 identificador IP local (**10.30.50.130**) para validar a
 ligação **IPsec** com a firewall VenusSuf.*
 
@@ -2322,8 +2233,7 @@ ligação **IPsec** com a firewall VenusSuf.*
 
 ![](./images/media/image123.png)
 
-*Figura 102 - Configuração dos parâmetros de **autenticação remota** no
-OPNsense, definindo a chave pré-partilhada (**Pre-Shared Key**) e o
+*Figura 102 - Configuração dos parâmetros de **autenticação remota** no OPNsense, definindo a chave pré-partilhada (**Pre-Shared Key**) e o
 endereço IP da firewall de destino (**10.20.50.98**) para validar o
 túnel **IPsec***
 
@@ -2359,8 +2269,7 @@ ambas as redes.
 
 ![](./images/media/image125.png)
 
-*Figura 103 - Configuração da **Child SA** no OPNsense, onde se definem
-as redes internas **Local** (172.30.50.96/28)
+*Figura 103 - Configuração da **Child SA** no OPNsense, onde se definem as redes internas **Local** (172.30.50.96/28)
 e **Remote** (172.20.50.192/28) que comunicarão de forma segura através
 do túnel **IPsec**.*
 
@@ -2384,15 +2293,13 @@ do túnel **IPsec**.*
 
 ![](./images/media/image127.png)
 
-*Figura 104 - Configuração da **Child SA** no OPNsense para estabelecer
-a comunicação segura entre a rede
+*Figura 104 - Configuração da **Child SA** no OPNsense para estabelecer a comunicação segura entre a rede
 local **Green-Marte** (172.30.50.96/28) e a rede
 remota **Orange-Venus** (192.168.50.248/29).*
 
 ![](./images/media/image128.png)
 
-*Figura 105 - Ativação do serviço e aplicação das configurações do
-túnel **IPsec-Marte-Venus** no OPNsense para estabelecer a ligação VPN.*
+*Figura 105 - Ativação do serviço e aplicação das configurações do túnel **IPsec-Marte-Venus** no OPNsense para estabelecer a ligação VPN.*
 
 ##### Regras de Firewall
 
@@ -2427,8 +2334,7 @@ pacotes entre as redes.
 
 ![](./images/media/image131.png)
 
-*Figura 106 - Configuração detalhada da regra de firewall na
-interface **WAN** para permitir o tráfego **IKE** (UDP 500) proveniente
+*Figura 106 - Configuração detalhada da regra de firewall na interface **WAN** para permitir o tráfego **IKE** (UDP 500) proveniente
 do VenusSuf, essencial para o estabelecimento do túnel **IPsec**.*
 
 **Regra 2 --- NAT-T:**
@@ -2451,8 +2357,7 @@ do VenusSuf, essencial para o estabelecimento do túnel **IPsec**.*
 
 ![](./images/media/image134.png)
 
-*Figura 107 - Configuração da segunda regra de firewall na
-interface **WAN** para permitir o tráfego **NAT-T** (UDP 4500)
+*Figura 107 - Configuração da segunda regra de firewall na interface **WAN** para permitir o tráfego **NAT-T** (UDP 4500)
 proveniente do VenusSuf, garantindo a travessia de pacotes IPsec em
 redes com tradução de endereços.*
 
@@ -2474,8 +2379,7 @@ redes com tradução de endereços.*
 
 ![](./images/media/image137.png)
 
-*Figura 108 - Configuração da terceira regra de firewall na
-interface **WAN** para permitir o protocolo **ESP** proveniente do
+*Figura 108 - Configuração da terceira regra de firewall na interface **WAN** para permitir o protocolo **ESP** proveniente do
 VenusSuf, assegurando o transporte dos dados encriptados pelo
 túnel **IPsec**.*
 
@@ -2507,22 +2411,19 @@ validada.
 
 ![](./images/media/image140.png)
 
-*Figura 109 - Configuração da regra de firewall na
-interface **IPsec** do OPNsense para permitir todo o tráfego proveniente
+*Figura 109 - Configuração da regra de firewall na interface **IPsec** do OPNsense para permitir todo o tráfego proveniente
 do túnel VPN, garantindo a comunicação entre as redes remotas.*
 
 ##### Validação da conexão IPsec
 
 ![](./images/media/image141.png)
 
-*Figura 110 - Visualização do estado da ligação no OPNsense, confirmando
-que o túnel **IPsec** está estabelecido com sucesso tanto na **Fase
+*Figura 110 - Visualização do estado da ligação no OPNsense, confirmando que o túnel **IPsec** está estabelecido com sucesso tanto na **Fase
 1** como na **Fase 2 (INSTALLED)**.*
 
 ![](./images/media/image142.png)
 
-*Figura 112 - Realização de testes de conectividade via terminal no
-Windows, confirmando a comunicação bem-sucedida entre as redes remotas
+*Figura 112 - Realização de testes de conectividade via terminal no Windows, confirmando a comunicação bem-sucedida entre as redes remotas
 através do túnel **IPsec**, com zero pacotes perdidos.*
 
 ## Configurar o OPNsense (MarteSuf) para enviar logs para o syslog-ng
@@ -2562,8 +2463,7 @@ Clicamos **+** para adicionar um novo destino:
 
 ![](./images/media/image144.png)
 
-*Figura 113 - Configuração do destino de registos remotos no OPNsense,
-definindo o porto **514** e o suporte ao padrão **RFC5424** para o envio
+*Figura 113 - Configuração do destino de registos remotos no OPNsense, definindo o porto **514** e o suporte ao padrão **RFC5424** para o envio
 de eventos para o servidor **Syslog-NG-Venus**.*
 
 ##### Regra de Firewall para Envio de Logs (Syslog)
@@ -2599,8 +2499,7 @@ Vamos a **Firewall à Rules à LAN** à **Add**:
 
 ![](./images/media/image147.png)
 
-*Figura 114 - Configuração da regra de firewall na
-interface **LAN** para autorizar o tráfego **UDP** (porto 514) com
+*Figura 114 - Configuração da regra de firewall na interface **LAN** para autorizar o tráfego **UDP** (porto 514) com
 destino ao servidor **Venus-Monitor**, permitindo o encaminhamento de
 logs do MarteSuf.*
 
@@ -2649,8 +2548,7 @@ da infraestrutura de rede estabelecida.
 
 Vamos a **System à Gateways à Configuration à Add**:
 
-Selecionamos a **LAN** como interface --- o tráfego IPSec passa pela LAN
-para chegar ao túnel.
+Selecionamos a **LAN** como interface --- o tráfego IPSec passa pela LAN para chegar ao túnel.
 
 Preenchemos da seguinte forma:
 
@@ -2674,8 +2572,7 @@ Preenchemos da seguinte forma:
 
 ![](./images/media/image150.png)
 
-*Figura 115 - Configuração final do **IPSec_GW** no OPNsense, definindo
-a descrição para o gateway remoto e guardando as definições na
+*Figura 115 - Configuração final do **IPSec_GW** no OPNsense, definindo a descrição para o gateway remoto e guardando as definições na
 interface **LAN** para assegurar o encaminhamento correto do tráfego
 para a rede do VenusSuf.*
 
@@ -2701,8 +2598,7 @@ persistente entre as duas localizações.
 
 ![](./images/media/image151.png)
 
-*Figura 116 - Configuração da rota estática no OPNsense, associando a
-rede remota **VenusSuf Green** (172.20.50.192/28) ao
+*Figura 116 - Configuração da rota estática no OPNsense, associando a rede remota **VenusSuf Green** (172.20.50.192/28) ao
 gateway **IPSec_GW** para garantir o encaminhamento correto do tráfego
 através da VPN.*
 
@@ -2731,43 +2627,36 @@ particionamento se encontram documentadas nas figuras que se seguem
 
 ![](./images/media/image152.png)
 
-*Figura 117 - Menu de arranque (boot) do suporte de instalação
-do **Linux Mint 22**, onde se inicia o processo de carregamento do
+*Figura 117 - Menu de arranque (boot) do suporte de instalação do **Linux Mint 22**, onde se inicia o processo de carregamento do
 sistema para proceder à instalação do servidor **Wazuh**.*
 
 ![](./images/media/image153.png)
 
-*Figura 118 - Ambiente de trabalho do **Linux Mint 22** em modo Live,
-destacando-se o ícone para iniciar o assistente de instalação definitiva
+*Figura 118 - Ambiente de trabalho do **Linux Mint 22** em modo Live, destacando-se o ícone para iniciar o assistente de instalação definitiva
 do sistema operativo no servidor.*
 
 ![](./images/media/image154.png)
 
-*Figura 119 - Seleção do **idioma** no assistente de instalação do Linux
-Mint para configurar as definições regionais e de teclado do servidor.*
+*Figura 119 - Seleção do **idioma** no assistente de instalação do Linux Mint para configurar as definições regionais e de teclado do servidor.*
 
 ![](./images/media/image155.png)
 
-*Figura 120 - Configuração da disposição do **teclado** no instalador do
-Linux Mint, selecionando o esquema em **Português** para garantir a
+*Figura 120 - Configuração da disposição do **teclado** no instalador do Linux Mint, selecionando o esquema em **Português** para garantir a
 compatibilidade com o hardware físico durante a utilização do servidor.*
 
 ![](./images/media/image156.png)
 
-*Figura 121 - Opção de instalação de **codecs multimédia** no Linux
-Mint, selecionada para garantir a compatibilidade com diversos formatos
+*Figura 121 - Opção de instalação de **codecs multimédia** no Linux Mint, selecionada para garantir a compatibilidade com diversos formatos
 de ficheiros e suporte completo a conteúdos web no servidor.*
 
 ![](./images/media/image157.png)
 
-*Figura 122 - Seleção do **tipo de instalação** no Linux Mint, optando
-por apagar o disco e instalar o sistema para uma configuração limpa do
+*Figura 122 - Seleção do **tipo de instalação** no Linux Mint, optando por apagar o disco e instalar o sistema para uma configuração limpa do
 servidor.*
 
 ![](./images/media/image158.png)
 
-*Figura 123 - Confirmação das alterações e do particionamento do disco
-para iniciar a escrita dos ficheiros do sistema operativo **Linux
+*Figura 123 - Confirmação das alterações e do particionamento do disco para iniciar a escrita dos ficheiros do sistema operativo **Linux
 Mint**.*
 
 ![](./images/media/image159.png)
@@ -2777,28 +2666,23 @@ Mint**.*
 
 ![](./images/media/image160.png)
 
-*Figura 125 - Configuração da conta de **utilizador** e do nome da
-máquina (**wazuhserver**) no assistente de instalação do Linux Mint.*
+*Figura 125 - Configuração da conta de **utilizador** e do nome da máquina (**wazuhserver**) no assistente de instalação do Linux Mint.*
 
 ![](./images/media/image161.png)
 
-*Figura 126 - Execução do processo de cópia de ficheiros e instalação do
-sistema operativo **Linux Mint** no servidor.*
+*Figura 126 - Execução do processo de cópia de ficheiros e instalação do sistema operativo **Linux Mint** no servidor.*
 
 ![](./images/media/image162.png)
 
-*Figura 127 - Conclusão da instalação do **Linux Mint**, com a indicação
-para **reiniciar** o sistema e finalizar a configuração do servidor.*
+*Figura 127 - Conclusão da instalação do **Linux Mint**, com a indicação para **reiniciar** o sistema e finalizar a configuração do servidor.*
 
 ![](./images/media/image163.png)
 
-*Figura 128 - Ecrã de início de sessão (login) do **Linux Mint**, onde
-se introduz a palavra-passe para aceder ao servidor **wazuhserver**.*
+*Figura 128 - Ecrã de início de sessão (login) do **Linux Mint**, onde se introduz a palavra-passe para aceder ao servidor **wazuhserver**.*
 
 ![](./images/media/image164.png)
 
-*Figura 129 - Execução dos comandos de atualização do sistema (sudo apt
-update && sudo apt upgrade) no terminal para garantir que o **Linux
+*Figura 129 - Execução dos comandos de atualização do sistema (sudo apt update && sudo apt upgrade) no terminal para garantir que o **Linux
 Mint** tem todos os pacotes e patches de segurança em dia antes da
 instalação do **Wazuh**.*
 
@@ -2808,8 +2692,7 @@ Para a implementação da solução de segurança, utilizou-se o assistente
 de instalação automatizado do **Wazuh**, seguindo as boas práticas da
 documentação oficial. Através da execução de um *script* unificado,
 procede-se à instalação e configuração de todos os componentes centrais
---- o **Wazuh Manager**, o **Wazuh Indexer** e o **Wazuh Dashboard** ---
-transformando o servidor Linux Mint no núcleo de monitorização e análise
+--- o **Wazuh Manager**, o **Wazuh Indexer** e o **Wazuh Dashboard** --- transformando o servidor Linux Mint no núcleo de monitorização e análise
 de eventos de toda a infraestrutura de rede.
 
 Podemos aceder, à documentação relativa à instalação, através do
@@ -2833,8 +2716,7 @@ bash ./wazuh-install.sh -a
 
 ![](./images/media/image166.png)
 
-*Figura 131 - Instalação do Wazuh-Manager no Linux Mint -- User e
-Password*
+*Figura 131 - Instalação do Wazuh-Manager no Linux Mint -- User e Password*
 
 User: admin
 
@@ -2848,8 +2730,7 @@ wazuh-install-files/wazuh-passwords.txt
 
 ![](./images/media/image167.png)
 
-*Figura 132 - Instalação do Wazuh-Manager no Linux Mint -- Visualização
-das Passwords*
+*Figura 132 - Instalação do Wazuh-Manager no Linux Mint -- Visualização das Passwords*
 
 Acedemos ao dashboard do Wazuh através da morada
 https://\<wazuh-dashboard-ip\>:443, como
@@ -2862,15 +2743,13 @@ Introduzimos as credenciais que foram providenciadas após a instalação.
 
 ![](./images/media/image168.png)
 
-*Figura 133 - Interface de acesso ao **Wazuh Dashboard** no navegador,
-onde se realizou o primeiro início de sessão com as credenciais de
+*Figura 133 - Interface de acesso ao **Wazuh Dashboard** no navegador, onde se realizou o primeiro início de sessão com as credenciais de
 administrador para aceder à consola de gestão e monitorização
 centralizada.*
 
 ![](./images/media/image169.png)
 
-*Figura 134 - Painel de controlo principal (**Overview**) do **Wazuh
-Dashboard**, onde é possível visualizar o resumo de alertas por
+*Figura 134 - Painel de controlo principal (**Overview**) do **Wazuh Dashboard**, onde é possível visualizar o resumo de alertas por
 gravidade e o estado global dos agentes de monitorização da rede.*
 
 ## Implementação e Configuração de Agentes Wazuh
@@ -2892,8 +2771,7 @@ selecionamos "Deploy new agent".
 
 ![](./images/media/image170.png)
 
-*Figura 135 - Início do assistente de implementação (**Deploy new
-agent**) na consola do Wazuh para configurar e gerar o comando de
+*Figura 135 - Início do assistente de implementação (**Deploy new agent**) na consola do Wazuh para configurar e gerar o comando de
 instalação personalizado para os diversos endpoints da rede.*
 
 Na janela seguinte, escolhemos o sistema operativo e introduzimos o
@@ -2911,8 +2789,7 @@ para a conexão."
 
 ![](./images/media/image171.png)
 
-*Figura 136 - Configuração da implementação de um novo agente
-para **Windows**, especificando o endereço IP do servidor Wazuh
+*Figura 136 - Configuração da implementação de um novo agente para **Windows**, especificando o endereço IP do servidor Wazuh
 (172.30.50.100) para estabelecer a comunicação e o envio de alertas.*
 
 Atribuímos um nome único que identifique o Wazuh-Agent.
@@ -2923,8 +2800,7 @@ seguinte.
 
 ![](./images/media/image172.png)
 
-*Figura 137 - Geração do comando personalizado no **Wazuh
-Dashboard** para a instalação do agente no Windows, com a atribuição do
+*Figura 137 - Geração do comando personalizado no **Wazuh Dashboard** para a instalação do agente no Windows, com a atribuição do
 nome específico agent-adds.*
 
 No Windows Server, executamos o comando copiado do dashboard do
@@ -2937,8 +2813,7 @@ WAZUH_MANAGER=\'172.30.50.100\' WAZUH_AGENT_NAME=\'agent-adds\'
 
 ![](./images/media/image173.png)
 
-*Figura 138 - Execução do comando de instalação do agente
-no **PowerShell** do Windows Server, realizando o download e a
+*Figura 138 - Execução do comando de instalação do agente no **PowerShell** do Windows Server, realizando o download e a
 configuração automática do serviço para comunicação com o
 servidor **Wazuh**.*
 
@@ -2949,20 +2824,17 @@ mostrado na figura seguinte.
 
 ![](./images/media/image174.png)
 
-*Figura 139 - Execução do comando NET START Wazuh no Windows para ativar
-o serviço e iniciar a comunicação oficial entre o agente instalado e o
+*Figura 139 - Execução do comando NET START Wazuh no Windows para ativar o serviço e iniciar a comunicação oficial entre o agente instalado e o
 servidor central.*
 
 ![](./images/media/image175.png)
 
-*Figura 140 - Execução do comando NET START wazuh no PowerShell para
-iniciar o serviço e confirmar a ativação bem-sucedida do agente no
+*Figura 140 - Execução do comando NET START wazuh no PowerShell para iniciar o serviço e confirmar a ativação bem-sucedida do agente no
 Windows Server.*
 
 ![](./images/media/image176.png)
 
-*Figura 141 - Visualização da lista de agentes no **Wazuh Dashboard**,
-confirmando que o agente **agent-adds** (Windows Server 2022) se
+*Figura 141 - Visualização da lista de agentes no **Wazuh Dashboard**, confirmando que o agente **agent-adds** (Windows Server 2022) se
 encontra no estado **Active** e a comunicar corretamente com o
 servidor.*
 
@@ -2976,47 +2848,40 @@ nas figuras seguintes.
 
 ![](./images/media/image177.png)
 
-*Figura 142 - Visualização da lista de agentes no **Wazuh Dashboard**,
-confirmando o estado **Active** do Windows Server (agent-adds) na
+*Figura 142 - Visualização da lista de agentes no **Wazuh Dashboard**, confirmando o estado **Active** do Windows Server (agent-adds) na
 zona **Green**.*
 
 ![](./images/media/image178.png)
 
-*Figura 143 - Configuração da implementação do agente **Wazuh** para o
-Windows Client na zona **Green**, especificando o endereço IP do
+*Figura 143 - Configuração da implementação do agente **Wazuh** para o Windows Client na zona **Green**, especificando o endereço IP do
 servidor (172.30.50.100) para o estabelecimento da comunicação.*
 
 ![](./images/media/image179.png)
 
-*Figura 144 - Geração do comando personalizado no **Wazuh
-Dashboard** para a instalação do agente no Windows Client, com a
+*Figura 144 - Geração do comando personalizado no **Wazuh Dashboard** para a instalação do agente no Windows Client, com a
 atribuição do nome específico **agent-winclient**.*
 
 Nota: É necessário abrir o Powershell como Administrator.
 
 ![](./images/media/image180.png)
 
-*Figura 145 - Execução do comando de instalação do
-agente **Wazuh** no **PowerShell** do Windows Client, realizando o
+*Figura 145 - Execução do comando de instalação do agente **Wazuh** no **PowerShell** do Windows Client, realizando o
 download do pacote MSI e a configuração automática do serviço com o
 nome **agent-winclient**.*
 
 ![](./images/media/image181.png)
 
-*Figura 146 - Instrução final no **Wazuh Dashboard** para a ativação do
-serviço através do comando NET START Wazuh, garantindo o início da
+*Figura 146 - Instrução final no **Wazuh Dashboard** para a ativação do serviço através do comando NET START Wazuh, garantindo o início da
 monitorização no Windows Client.*
 
 ![](./images/media/image182.png)
 
-*Figura 147 - Execução do comando NET START wazuh no PowerShell
-do **winclient**, confirmando a ativação bem-sucedida do serviço e o
+*Figura 147 - Execução do comando NET START wazuh no PowerShell do **winclient**, confirmando a ativação bem-sucedida do serviço e o
 início da monitorização na zona **Green**.*
 
 ![](./images/media/image183.png)
 
-*Figura 148 - Visualização da lista de agentes no **Wazuh Dashboard**,
-confirmando que ambos os dispositivos
+*Figura 148 - Visualização da lista de agentes no **Wazuh Dashboard**, confirmando que ambos os dispositivos
 (**agent-adds** e **agent-winclient**) se encontram no
 estado **Active** e a comunicar corretamente com o servidor.*
 
@@ -3035,8 +2900,7 @@ encontram-se documentados nas figuras seguintes.
 
 ![](./images/media/image186.png)
 
-*Figura 150 - Configuração do instalador do Wazuh Agent no Dashboard,
-com a definição do pacote Windows e o IP do Manager (172.30.50.100).*
+*Figura 150 - Configuração do instalador do Wazuh Agent no Dashboard, com a definição do pacote Windows e o IP do Manager (172.30.50.100).*
 
 ##### Instalação do Wazuh-Agent no Ubuntu Syslog (Venus)
 
@@ -3055,13 +2919,11 @@ postura de segurança e visibilidade sobre os ativos críticos da rede.
 
 ![](./images/media/image189.png)
 
-*Figura 151 - Sequência de ativação e verificação do Wazuh-Agent no
-Ubuntu Syslog.*
+*Figura 151 - Sequência de ativação e verificação do Wazuh-Agent no Ubuntu Syslog.*
 
 ![](./images/media/image190.png)
 
-*Figura 152 - Instalação do pacote .deb, ativação do serviço e
-verificação do estado active (running) do Wazuh Agent no Ubuntu Syslog.*
+*Figura 152 - Instalação do pacote .deb, ativação do serviço e verificação do estado active (running) do Wazuh Agent no Ubuntu Syslog.*
 
 ##### Instalação do Wazuh-Agent no Ubuntu Nessus (Venus)
 
@@ -3081,13 +2943,11 @@ centralização de logs e alertas.
 
 ![](./images/media/image193.png)
 
-*Figura 153 - Configuração e instruções para instalação do Wazuh-Agent
-no Ubuntu Nessus.*
+*Figura 153 - Configuração e instruções para instalação do Wazuh-Agent no Ubuntu Nessus.*
 
 ![](./images/media/image194.png)
 
-*Figura 154 - Instalação do pacote .deb, ativação e validação do
-estado active (running) do Wazuh Agent via terminal no Ubuntu Nessus.*
+*Figura 154 - Instalação do pacote .deb, ativação e validação do estado active (running) do Wazuh Agent via terminal no Ubuntu Nessus.*
 
 ##### Instalação do Wazuh-Agent no Win Core (Orange)
 
@@ -3108,18 +2968,15 @@ zona de rede.
 
 ![](./images/media/image197.png)
 
-*Figura 155 - Sequência de configuração e comandos de ativação para o
-Wazuh Agent no Windows Core.*
+*Figura 155 - Sequência de configuração e comandos de ativação para o Wazuh Agent no Windows Core.*
 
 ![](./images/media/image198.png)
 
-*Figura 156 - Configuração de rede e execução do script de instalação
-via PowerShell no Windows Server Core.*
+*Figura 156 - Configuração de rede e execução do script de instalação via PowerShell no Windows Server Core.*
 
 ![](./images/media/image199.png)
 
-*Figura 157 - Instalação e ativação do Wazuh Agent via PowerShell no
-Windows Server Core.*
+*Figura 157 - Instalação e ativação do Wazuh Agent via PowerShell no Windows Server Core.*
 
 ##### Instalação do Wazuh-Agent no Debian-WAF
 
@@ -3139,18 +2996,15 @@ rápida a incidentes na DMZ.
 
 ![](./images/media/image202.png)
 
-*Figura 158 - Configuração, parâmetros de registo e instruções de
-ativação do Wazuh Agent no Debian-WAF*
+*Figura 158 - Configuração, parâmetros de registo e instruções de ativação do Wazuh Agent no Debian-WAF*
 
 ![](./images/media/image203.png)
 
-*Figura 159 - Instalação do pacote .deb, ativação e validação do
-estado active (running) do Wazuh Agent via terminal no Debian-WAF.*
+*Figura 159 - Instalação do pacote .deb, ativação e validação do estado active (running) do Wazuh Agent via terminal no Debian-WAF.*
 
 ![](./images/media/image204.png)
 
-*Figura 160 - Dashboard do Wazuh-Manager: Visualização do agente recém
-instalado*
+*Figura 160 - Dashboard do Wazuh-Manager: Visualização do agente recém instalado*
 
 ![](./images/media/image205.png)
 
@@ -3163,8 +3017,7 @@ eventos provenientes do IDS/IPS Suricata. Dado que a plataforma OPNsense
 não suporta a instalação direta do agente Wazuh, a integração é
 realizada através do protocolo Syslog.
 
-Nesta configuração, o Suricata --- a correr na firewall MarteSuf ---
-encaminha os alertas de intrusão detetados nas interfaces de rede para o
+Nesta configuração, o Suricata --- a correr na firewall MarteSuf --- encaminha os alertas de intrusão detetados nas interfaces de rede para o
 Wazuh Manager. Este, por sua vez, processa os logs recebidos, permitindo
 a centralização e visualização detalhada de ameaças externas e internas
 no dashboard de monitorização.
@@ -3200,8 +3053,7 @@ amm@wazuhserver:\~\$ sudo vim /var/ossec/etc/ossec.conf
 
 ![](./images/media/image206.png)
 
-*Figura 162 - Configuração do protocolo Syslog no ficheiro ossec.conf do
-Wazuh Manager.*
+*Figura 162 - Configuração do protocolo Syslog no ficheiro ossec.conf do Wazuh Manager.*
 
 Guardamos e reiniciamos o Wazuh:
 
@@ -3209,8 +3061,7 @@ amm@wazuhserver:\~\$ sudo systemctl restart wazuh-manager
 
 ![](./images/media/image207.png)
 
-*Figura 163 - Edição do ficheiro ossec.conf e reinicialização do
-serviço wazuh-manager.*
+*Figura 163 - Edição do ficheiro ossec.conf e reinicialização do serviço wazuh-manager.*
 
 ##### Configurar o OPNsense para enviar logs do Suricata para o Wazuh
 
@@ -3232,16 +3083,14 @@ No OPNsense vamos a **System à Settings à Logging à Remote**:
 
 ![](./images/media/image208.png)
 
-*Figura 164 - Configuração do destino Syslog no OPNsense para
-encaminhamento de logs do Suricata.*
+*Figura 164 - Configuração do destino Syslog no OPNsense para encaminhamento de logs do Suricata.*
 
 Para testar se o Wazuh-Manager já recebe logs usamos o tcpdump. Fazemos
 um ping ou usamos o nmap numa das máquinas para gerar tráfego.
 
 amm@wazuhserver:\~\$ sudo tcpdump -i ens33 udp port 514
 
-![](./images/media/image209.png) *Figura 165 - Verificação da receção de
-pacotes Syslog no Wazuh Server.*
+![](./images/media/image209.png) *Figura 165 - Verificação da receção de pacotes Syslog no Wazuh Server.*
 
 Através da ferramenta de análise de pacotes tcpdump, procedeu-se à
 validação do fluxo de dados entre o **OPNsense** e o **Wazuh Manager**.
@@ -3264,11 +3113,9 @@ sudo vim /var/ossec/etc/decoders/suricata_decoder.xml
 
 ![](./images/media/image210.png)
 
-*Figura 166 - Edição do ficheiro suricata_decoder.xml e reinicialização
-do serviço no servidor Wazuh.*
+*Figura 166 - Edição do ficheiro suricata_decoder.xml e reinicialização do serviço no servidor Wazuh.*
 
-![](./images/media/image211.png) *Figura 167 - Configuração do
-descodificador XML para eventos Suricata.*
+![](./images/media/image211.png) *Figura 167 - Configuração do descodificador XML para eventos Suricata.*
 
 \<decoder name=\"suricata\"\>
 
@@ -3284,8 +3131,7 @@ descodificador XML para eventos Suricata.*
 
 ![](./images/media/image214.png)
 
-*Figura 170 - Validação do processamento de logs do Suricata através da
-ferramenta wazuh-logtest.*
+*Figura 170 - Validação do processamento de logs do Suricata através da ferramenta wazuh-logtest.*
 
 A imagem demonstra as três fases do motor de análise: a
 pré-descodificação do log bruto; a descodificação bem-sucedida pelo
@@ -3311,13 +3157,11 @@ sistema em detetar anomalias de tráfego de rede.
 
 ![](./images/media/image215.png)
 
-*Figura 171 - Visualização de alertas de segurança no Dashboard do Wazuh
-após ataque DoS.*
+*Figura 171 - Visualização de alertas de segurança no Dashboard do Wazuh após ataque DoS.*
 
 ![](./images/media/image216.png)
 
-*Figura 172 - Detalhe do alerta estruturado no Wazuh após simulação de
-ataque DoS.*
+*Figura 172 - Detalhe do alerta estruturado no Wazuh após simulação de ataque DoS.*
 
 ## Encaminhamento de Alertas para Servidor Externo (Syslog-ng)
 
@@ -3359,8 +3203,7 @@ contínua
 
 ![](./images/media/image217.png)
 
-*Figura 173 - Configuração do envio de alertas para o servidor
-Syslog-ng.*
+*Figura 173 - Configuração do envio de alertas para o servidor Syslog-ng.*
 
 ##### Finalização e Reinício do Serviço Wazuh Manager
 
@@ -3376,8 +3219,7 @@ systemctl restart wazuh-manager
 
 ![](./images/media/image218.png)
 
-*Figura 174 - Sequência de comandos para validação do diretório de
-configuração, edição do ficheiro ossec.conf e reinício do serviço
+*Figura 174 - Sequência de comandos para validação do diretório de configuração, edição do ficheiro ossec.conf e reinício do serviço
 wazuh-manager para ativação do Syslog.*
 
 ## Threat Hunting e Deteção de Incidentes
@@ -3397,8 +3239,7 @@ identificação imediata do alvo comprometido na rede.
 
 ![](./images/media/image219.png)
 
-*Figura 175 - Painel de Threat Hunting do Wazuh exibindo alertas
-críticos de \"Successful Remote Logon\" e potenciais ataques
+*Figura 175 - Painel de Threat Hunting do Wazuh exibindo alertas críticos de \"Successful Remote Logon\" e potenciais ataques
 de pass-the-hash provenientes do Kali_Red.*
 
 ![](./images/media/image220.png)
@@ -3413,8 +3254,7 @@ de pass-the-hash provenientes do Kali_Red.*
 
 ![](./images/media/image225.png)
 
-*Figura 176 - Alerta crítico de \"Successful Remote Logon\" e potencial
-ataque de pass-the-hash proveniente do Kali_Red.*
+*Figura 176 - Alerta crítico de \"Successful Remote Logon\" e potencial ataque de pass-the-hash proveniente do Kali_Red.*
 
 **Análise Detalhada do Incidente: Deteção de Pass-the-Hash**
 
@@ -3469,14 +3309,12 @@ utilizadores legítimos.
 
 ![](./images/media/image226.png)
 
-*Figura 177 - Alerta crítico no Wazuh detalhando a deteção de um ataque
-de **DoS (Denial of Service)** executado com a ferramenta **hping3** a
+*Figura 177 - Alerta crítico no Wazuh detalhando a deteção de um ataque de **DoS (Denial of Service)** executado com a ferramenta **hping3** a
 partir da máquina **Kali_Red**.*
 
 ![](./images/media/image227.png)
 
-*Figura 178 - Alerta crítico no Wazuh detalhando a deteção de um ataque
-de **DoS (Denial of Service)** executado com a ferramenta **hping3** a
+*Figura 178 - Alerta crítico no Wazuh detalhando a deteção de um ataque de **DoS (Denial of Service)** executado com a ferramenta **hping3** a
 partir da máquina **Kali_Red**.*
 
 ##### Análise de Movimento Lateral e Escalamento de Privilégios: Do Kali ao Windows Server
@@ -3494,8 +3332,7 @@ diretório (Active Directory).
 
 ![](./images/media/image228.png)
 
-![](./images/media/image229.png) *Figura 179 - Alerta do Wazuh confirmando
-o sucesso do movimento lateral via RDP, com a atribuição de privilégios
+![](./images/media/image229.png) *Figura 179 - Alerta do Wazuh confirmando o sucesso do movimento lateral via RDP, com a atribuição de privilégios
 administrativos totais no Windows Server.*
 
 ##### Deteção e Mitigação de Ameaça Externa Real (Caso de Estudo)
@@ -3515,41 +3352,34 @@ um bloqueio automático (Active Response) para isolar a ameaça.
 
 ![](./images/media/image230.png)
 
-*Figura 180 - Alerta inicial de reconhecimento via Nmap (ACK scan)
-intercetado pelo Suricata no host martesuf.*
+*Figura 180 - Alerta inicial de reconhecimento via Nmap (ACK scan) intercetado pelo Suricata no host martesuf.*
 
 ![](./images/media/image231.png)
 
-*Figura 181 - Notificação de alerta crítico (Nível 12) com acionamento
-automático de envio de e-mail para a equipa de segurança.*
+*Figura 181 - Notificação de alerta crítico (Nível 12) com acionamento automático de envio de e-mail para a equipa de segurança.*
 
 ![](./images/media/image232.png)
 
-*Figura 182 - Detalhe da assinatura do Suricata (ET SCAN NMAP -sA)
-identificando a técnica específica de mapeamento de firewall.*
+*Figura 182 - Detalhe da assinatura do Suricata (ET SCAN NMAP -sA) identificando a técnica específica de mapeamento de firewall.*
 
 ![](./images/media/image233.png)
 
-*Figura 183 - Correlação de eventos no painel do Wazuh, consolidando os
-logs do IDS e identificando o IP de origem externa.*
+*Figura 183 - Correlação de eventos no painel do Wazuh, consolidando os logs do IDS e identificando o IP de origem externa.*
 
 ![](./images/media/image234.png)
 
-*Figura 184 - Registo da Resposta Ativa (Active Response): o Wazuh
-ordena o bloqueio imediato do IP atacante através do
+*Figura 184 - Registo da Resposta Ativa (Active Response): o Wazuh ordena o bloqueio imediato do IP atacante através do
 script firewall-drop.*
 
 ![](./images/media/image235.png)
 
-*Figura 185 - Confirmação do bloqueio no log de active-responses.log,
-demonstrando a mitigação bem-sucedida do ataque em tempo real.*
+*Figura 185 - Confirmação do bloqueio no log de active-responses.log, demonstrando a mitigação bem-sucedida do ataque em tempo real.*
 
 ![](./images/media/image236.png)
 
 ![](./images/media/image237.png)
 
-*Figura 186 - Consulta de reputação no portal **AbuseIPDB**, confirmando
-que o IP 34.120.208.123 (Google Cloud) possui mais de 600 reportes por
+*Figura 186 - Consulta de reputação no portal **AbuseIPDB**, confirmando que o IP 34.120.208.123 (Google Cloud) possui mais de 600 reportes por
 atividades abusivas e um nível de confiança de abuso de 29%, validando a
 natureza maliciosa do varrimento detetado.*
 
@@ -3597,10 +3427,8 @@ em múltiplas camadas: desde o varrimento inicial de rede
 movimento lateral e **escalamento de privilégios** em ambiente Windows
 (Event ID 4672).
 
-A visibilidade total sobre o fluxo do ataque --- permitindo identificar
-a origem (**Kali_Red**), o método (**Reverse Shell/RDP**) e o impacto
-final --- valida o SIEM como uma ferramenta indispensável na deteção
-precoce de intrusões. Este cenário reforça que a proteção de uma
+A visibilidade total sobre o fluxo do ataque --- permitindo identificar a origem (**Kali_Red**), o método (**Reverse Shell/RDP**) e o impacto
+final --- valida o SIEM como uma ferramenta indispensável na deteção precoce de intrusões. Este cenário reforça que a proteção de uma
 infraestrutura moderna depende não apenas de barreiras estáticas
 (firewalls), mas de uma monitorização ativa capaz de identificar
 comportamentos anómalos e garantir a integridade dos ativos críticos do
@@ -3608,8 +3436,7 @@ domínio.
 
 ![](./images/media/image238.png)
 
-*Figura 187 - Representação conceptual do módulo de Threat
-Hunting do **Wazuh**, focado na identificação e isolamento de agentes
+*Figura 187 - Representação conceptual do módulo de Threat Hunting do **Wazuh**, focado na identificação e isolamento de agentes
 maliciosos entre utilizadores legítimos da infraestrutura.*
 
 # 
@@ -3641,14 +3468,12 @@ replicação deste cenário.
 
 ![](./images/media/image239.png)
 
-*Figura 188 - Configuração inicial de idioma, fuso horário e teclado
-durante o processo de instalação do sistema operativo Microsoft Windows
+*Figura 188 - Configuração inicial de idioma, fuso horário e teclado durante o processo de instalação do sistema operativo Microsoft Windows
 Server 2022 em ambiente virtualizado (VMware Workstation).*
 
 ![](./images/media/image240.png)
 
-*Figura 189 - Início do assistente de instalação do Windows Server 2022
-após o arranque (boot) bem-sucedido da imagem ISO.*
+*Figura 189 - Início do assistente de instalação do Windows Server 2022 após o arranque (boot) bem-sucedido da imagem ISO.*
 
 ![](./images/media/image241.png)
 
@@ -3657,18 +3482,15 @@ após o arranque (boot) bem-sucedido da imagem ISO.*
 
 ![](./images/media/image242.png)
 
-*Figura 191 - Seleção da opção de instalação personalizada (**Custom**)
-para configuração manual das partições de disco.*
+*Figura 191 - Seleção da opção de instalação personalizada (**Custom**) para configuração manual das partições de disco.*
 
 ![](./images/media/image243.png)
 
-*Figura 192 - Monitorização do progresso da cópia e preparação dos
-ficheiros de sistema no processo de instalação.*
+*Figura 192 - Monitorização do progresso da cópia e preparação dos ficheiros de sistema no processo de instalação.*
 
 ![](./images/media/image244.png)
 
-*Figura 193 - Definição da palavra-passe de segurança para a conta de
-administrador local do sistema.*
+*Figura 193 - Definição da palavra-passe de segurança para a conta de administrador local do sistema.*
 
 ![](./images/media/image245.png)
 
@@ -3677,8 +3499,7 @@ definição do servidor DNS.
 
 ![](./images/media/image246.png)
 
-*Figura 195 - Alteração do nome do servidor para WINSERVER_AMM e
-definição do sufixo DNS primário do sistema.*
+*Figura 195 - Alteração do nome do servidor para WINSERVER_AMM e definição do sufixo DNS primário do sistema.*
 
 ### Promoção do Servidor: Implementação do Active Directory Domain Services (AD DS) Introdução
 
@@ -3691,13 +3512,11 @@ servirão de base para a criação da estrutura hierárquica da organização.
 
 ![](./images/media/image247.png)
 
-*Figura 196 - Acesso ao menu \"Add Roles and Features\" para iniciar a
-instalação da função de Controlador de Domínio.*
+*Figura 196 - Acesso ao menu \"Add Roles and Features\" para iniciar a instalação da função de Controlador de Domínio.*
 
 ![](./images/media/image248.png)
 
-*Figura 197 - Início do assistente \"Add Roles and Features\" para
-configuração do servidor.*
+*Figura 197 - Início do assistente \"Add Roles and Features\" para configuração do servidor.*
 
 ![](./images/media/image249.png)
 
@@ -3705,38 +3524,31 @@ Seleção do tipo de instalação baseada em funções ou funcionalidades.
 
 ![](./images/media/image250.png)
 
-*Figura 198 - Seleção do servidor de destino no Server Pool para a
-instalação.*
+*Figura 198 - Seleção do servidor de destino no Server Pool para a instalação.*
 
 ![](./images/media/image251.png)
 
-*Figura 199 - Seleção da função Active Directory Domain Services (AD
-DS).*
+*Figura 199 - Seleção da função Active Directory Domain Services (AD DS).*
 
 ![](./images/media/image252.png)
 
-*Figura 200 - Adição de funcionalidades e ferramentas de gestão
-necessárias para o AD DS.*
+*Figura 200 - Adição de funcionalidades e ferramentas de gestão necessárias para o AD DS.*
 
 ![](./images/media/image253.png)
 
-*Figura 201 - Seleção de funcionalidades adicionais para o sistema
-operativo.*
+*Figura 201 - Seleção de funcionalidades adicionais para o sistema operativo.*
 
 ![](./images/media/image254.png)
 
-*Figura 202 - Resumo informativo sobre a função Active Directory Domain
-Services.*
+*Figura 202 - Resumo informativo sobre a função Active Directory Domain Services.*
 
 ![](./images/media/image255.png)
 
-*Figura 203 - Confirmação das seleções e autorização para reinício
-automático do servidor.*
+*Figura 203 - Confirmação das seleções e autorização para reinício automático do servidor.*
 
 ![](./images/media/image256.png)
 
-*Figura 204 - Confirmação final e início da instalação das funções
-selecionadas.*
+*Figura 204 - Confirmação final e início da instalação das funções selecionadas.*
 
 ### Configuração do Active Directory Domain Services (AD DS)
 
@@ -3749,28 +3561,23 @@ necessárias para transformar o servidor num **Controlador de Domínio**.
 
 ![](./images/media/image257.png)
 
-*Figura 205 - Aviso de notificação para início da configuração
-pós-instalação do AD DS.*
+*Figura 205 - Aviso de notificação para início da configuração pós-instalação do AD DS.*
 
 ![](./images/media/image258.png)
 
-*Figura 206 - Seleção da opção para promover o servidor a Controlador de
-Domínio.*
+*Figura 206 - Seleção da opção para promover o servidor a Controlador de Domínio.*
 
 ![](./images/media/image259.png)
 
-*Figura 207 - Criação de uma nova floresta e definição do nome do
-domínio de raiz.*
+*Figura 207 - Criação de uma nova floresta e definição do nome do domínio de raiz.*
 
 ![](./images/media/image260.png)
 
-*Figura 208 - Definição dos níveis funcionais e da palavra-passe do
-Directory Services Restore Mode (DSRM).*
+*Figura 208 - Definição dos níveis funcionais e da palavra-passe do Directory Services Restore Mode (DSRM).*
 
 ![](./images/media/image261.png)
 
-*Figura 209 - Configuração das opções de delegação de DNS para o novo
-domínio.*
+*Figura 209 - Configuração das opções de delegação de DNS para o novo domínio.*
 
 ![](./images/media/image262.png)
 
@@ -3778,23 +3585,19 @@ domínio.*
 
 ![](./images/media/image263.png)
 
-*Figura 211 - Definição dos caminhos para a base de dados, logs e pasta
-SYSVOL do AD DS.*
+*Figura 211 - Definição dos caminhos para a base de dados, logs e pasta SYSVOL do AD DS.*
 
 ![](./images/media/image264.png)
 
-*Figura 212 - Revisão geral de todas as opções de configuração
-selecionadas para o AD DS.*
+*Figura 212 - Revisão geral de todas as opções de configuração selecionadas para o AD DS.*
 
 ![](./images/media/image265.png)
 
-*Figura 213 - Verificação bem-sucedida dos pré-requisitos e início da
-instalação final.*
+*Figura 213 - Verificação bem-sucedida dos pré-requisitos e início da instalação final.*
 
 ![](./images/media/image266.png)
 
-*Figura 214 - Ecrã de início de sessão após a promoção bem-sucedida ao
-novo domínio.*
+*Figura 214 - Ecrã de início de sessão após a promoção bem-sucedida ao novo domínio.*
 
 ### Configuração e Gestão do Serviço DNS
 
@@ -3817,8 +3620,7 @@ e suportar serviços internos que dependem da resolução inversa.
 
 ![](./images/media/image267.png)
 
-*Figura 215 - Acesso à consola de gestão do DNS através das ferramentas
-administrativas do Server Manager.*
+*Figura 215 - Acesso à consola de gestão do DNS através das ferramentas administrativas do Server Manager.*
 
 No painel do Server Manager, aceda ao menu \'Tools\' e selecione a
 consola DNS. Em seguida, na consola de gestão, clique com o botão
@@ -3827,8 +3629,7 @@ iniciar o assistente de configuração.
 
 ![](./images/media/image268.png)
 
-*Figura 216 - Acesso à opção \"New Zone\" para iniciar a criação da Zona
-de Pesquisa Inversa.*
+*Figura 216 - Acesso à opção \"New Zone\" para iniciar a criação da Zona de Pesquisa Inversa.*
 
 No assistente de configuração (**New Zone Wizard**), clique em \'Next\'
 para avançar e, no ecrã seguinte, selecione a opção **\'Primary
@@ -3837,8 +3638,7 @@ da zona DNS.
 
 ![](./images/media/image269.png)
 
-*Figura 217 - Início do assistente de configuração e seleção do tipo de
-zona primária.*
+*Figura 217 - Início do assistente de configuração e seleção do tipo de zona primária.*
 
 ![](./images/media/image270.png)
 
@@ -3846,8 +3646,7 @@ zona primária.*
 
 ![](./images/media/image271.png)
 
-*Figura 219 - Definição do âmbito de replicação da zona DNS para todos
-os controladores de domínio.*
+*Figura 219 - Definição do âmbito de replicação da zona DNS para todos os controladores de domínio.*
 
 No âmbito de replicação da zona, selecione a opção que abrange todos os
 controladores de domínio no domínio atual. No passo seguinte, escolha a
@@ -3856,13 +3655,11 @@ ID** correspondente à sub-rede do servidor.
 
 ![](./images/media/image272.png)
 
-*Figura 220 - Seleção do protocolo IPv4 para a criação da nova Zona de
-Pesquisa Inversa.*
+*Figura 220 - Seleção do protocolo IPv4 para a criação da nova Zona de Pesquisa Inversa.*
 
 ![](./images/media/image273.png)
 
-*Figura 221 - Introdução do Network ID para identificação da rede na
-Zona de Pesquisa Inversa.*
+*Figura 221 - Introdução do Network ID para identificação da rede na Zona de Pesquisa Inversa.*
 
 No passo relativo às **\'Dynamic Updates\'**, selecione a opção para
 permitir apenas atualizações dinâmicas seguras, garantindo assim que
@@ -3872,13 +3669,11 @@ resumo.
 
 ![](./images/media/image274.png)
 
-*Figura 222 - Configuração das atualizações dinâmicas seguras para a
-nova zona DNS.*
+*Figura 222 - Configuração das atualizações dinâmicas seguras para a nova zona DNS.*
 
 ![](./images/media/image275.png)
 
-*Figura 223 - Conclusão e resumo da configuração da nova Zona de
-Pesquisa Inversa.*
+*Figura 223 - Conclusão e resumo da configuração da nova Zona de Pesquisa Inversa.*
 
 Para concluir a configuração do DNS, é necessário criar um registo PTR
 (Pointer Record), que associa o endereço IP do servidor ao seu nome de
@@ -3887,43 +3682,35 @@ nos passos seguintes.
 
 ![](./images/media/image276.png)
 
-*Figura 224 - Seleção da opção \"New Pointer (PTR)\" na Zona de Pesquisa
-Inversa.*
+*Figura 224 - Seleção da opção \"New Pointer (PTR)\" na Zona de Pesquisa Inversa.*
 
 ![](./images/media/image277.png)
 
-*Figura 225 - Seleção do Host Name para o novo registo PTR através do
-botão \"Browse\".*
+*Figura 225 - Seleção do Host Name para o novo registo PTR através do botão \"Browse\".*
 
 ![](./images/media/image278.png)
 
-*Figura 226 - Seleção do registo de anfitrião (Host A) para associação
-ao registo PTR.*
+*Figura 226 - Seleção do registo de anfitrião (Host A) para associação ao registo PTR.*
 
 ![](./images/media/image279.png)
 
-*Figura 227 - Confirmação da seleção do registo de anfitrião para a
-criação do ponteiro.*
+*Figura 227 - Confirmação da seleção do registo de anfitrião para a criação do ponteiro.*
 
 ![](./images/media/image280.png)
 
-*Figura 228 - Confirmação da seleção do registo de anfitrião para a
-criação do ponteiro.*
+*Figura 228 - Confirmação da seleção do registo de anfitrião para a criação do ponteiro.*
 
 ![](./images/media/image281.png)
 
-*Figura 229 - Confirmação da seleção do registo de anfitrião para a
-criação do ponteiro.*
+*Figura 229 - Confirmação da seleção do registo de anfitrião para a criação do ponteiro.*
 
 ![](./images/media/image282.png)
 
-*Figura 230 - Conclusão da criação do registo PTR com a associação do IP
-ao Host Name.*
+*Figura 230 - Conclusão da criação do registo PTR com a associação do IP ao Host Name.*
 
 ![](./images/media/image283.png)
 
-*Figura 231 - Visualização final da consola DNS com os registos de
-anfitrião (Host A) configurados.*
+*Figura 231 - Visualização final da consola DNS com os registos de anfitrião (Host A) configurados.*
 
 Com a criação da Zona de Pesquisa Inversa e o registo dos respetivos
 ponteiros (PTR), a configuração do serviço DNS encontra-se concluída e
@@ -3942,8 +3729,7 @@ assim a atribuição automática de endereços IP aos dispositivos da rede.
 
 ![](./images/media/image284.png)
 
-*Figura 232 - Acesso à opção \"Add Roles and Features\" através do menu
-Manage do Server Manager.*
+*Figura 232 - Acesso à opção \"Add Roles and Features\" através do menu Manage do Server Manager.*
 
 ![](./images/media/image285.png)
 
@@ -3956,8 +3742,7 @@ DHCP Server para ativação do serviço.
 
 ![](./images/media/image286.png)
 
-*Figura 234 - Seleção do servidor local no Server Pool para a instalação
-da função DHCP.*
+*Figura 234 - Seleção do servidor local no Server Pool para a instalação da função DHCP.*
 
 Confirme a inclusão das ferramentas de gestão necessárias em **\'Add
 Features\'**. Como demonstrado na imagem seguinte, selecione a
@@ -3965,20 +3750,17 @@ função **DHCP Server** para instalação.
 
 ![](./images/media/image287.png)
 
-*Figura 235 - Seleção da função DHCP Server e confirmação das
-funcionalidades de gestão.*
+*Figura 235 - Seleção da função DHCP Server e confirmação das funcionalidades de gestão.*
 
 ![](./images/media/image288.png)
 
-*Figura 236 - Confirmação da adição das ferramentas de gestão
-necessárias para o servidor DHCP.*
+*Figura 236 - Confirmação da adição das ferramentas de gestão necessárias para o servidor DHCP.*
 
 Clique em **Seguinte** nos menus indicados de seguida.
 
 ![](./images/media/image289.png)
 
-*Figura 237 - Passagem pelo ecrã de seleção de funcionalidades
-adicionais do sistema.*
+*Figura 237 - Passagem pelo ecrã de seleção de funcionalidades adicionais do sistema.*
 
 ![](./images/media/image290.png)
 
@@ -4005,13 +3787,11 @@ pós-instalação.
 
 ![](./images/media/image293.png)
 
-*Figura 241 - Seleção da notificação para iniciar a configuração
-pós-instalação do DHCP.*
+*Figura 241 - Seleção da notificação para iniciar a configuração pós-instalação do DHCP.*
 
 ![](./images/media/image294.png)
 
-*Figura 242 - Execução da tarefa de pós-implementação para completar a
-configuração do DHCP.*
+*Figura 242 - Execução da tarefa de pós-implementação para completar a configuração do DHCP.*
 
 No ecrã de descrição do assistente, clique em **\'Next\'** para avançar.
 Na etapa de **Autorização**, as credenciais do utilizador administrador
@@ -4022,8 +3802,7 @@ autorização.
 
 ![](./images/media/image295.png)
 
-*Figura 243 - Seleção de credenciais de administrador para autorização
-do servidor DHCP no domínio.*
+*Figura 243 - Seleção de credenciais de administrador para autorização do servidor DHCP no domínio.*
 
 Como demonstrado no ecrã de resumo, a criação dos grupos de segurança e
 a autorização do servidor no domínio foram concluídas com sucesso.
@@ -4032,13 +3811,11 @@ pós-instalação.\"
 
 ![](./images/media/image296.png)
 
-*Figura 244 - Conclusão do assistente de pós-instalação e confirmação da
-autorização do DHCP*
+*Figura 244 - Conclusão do assistente de pós-instalação e confirmação da autorização do DHCP*
 
 ![](./images/media/image297.png)
 
-*Figura 245 - Acesso à consola de gestão do DHCP através do menu Tools
-no Server Manager.*
+*Figura 245 - Acesso à consola de gestão do DHCP através do menu Tools no Server Manager.*
 
 Para proceder à criação do **Âmbito (Scope) de DHCP**, aceda ao
 menu **\'Tools\'** no **Server Manager** e selecione a
@@ -4048,8 +3825,7 @@ protocolo **\'IPv4\'**.\".
 
 ![](./images/media/image298.png)
 
-*Figura 246 - Seleção da opção \"New Scope\" para iniciar o assistente
-de configuração de um novo âmbito IPv4.*
+*Figura 246 - Seleção da opção \"New Scope\" para iniciar o assistente de configuração de um novo âmbito IPv4.*
 
 No ecrã de boas-vindas do **New Scope Wizard**, clique
 em **\'Next\'** para iniciar a configuração. No passo seguinte (**Scope
@@ -4059,13 +3835,11 @@ em **\'Next\'** para prosseguir.
 
 ![](./images/media/image299.png)
 
-*Figura 247 - Início do assistente \"New Scope Wizard\" para a
-configuração do novo âmbito de endereços.*
+*Figura 247 - Início do assistente \"New Scope Wizard\" para a configuração do novo âmbito de endereços.*
 
 ![](./images/media/image300.png)
 
-*Figura 248 - Atribuição de um nome e descrição identificativos ao novo
-Âmbito de DHCP.*
+*Figura 248 - Atribuição de um nome e descrição identificativos ao novo Âmbito de DHCP.*
 
 Nesta etapa, deve-se definir o intervalo de endereços IP (**IP Address
 Range**) que o servidor poderá atribuir automaticamente. É fundamental
@@ -4084,13 +3858,11 @@ projeto, a segmentação da rede foi planeada da seguinte forma:
 
 ![](./images/media/image301.png)
 
-*Figura 249 - Configuração do intervalo de endereços IP (Start/End IP) e
-da máscara de sub-rede.*
+*Figura 249 - Configuração do intervalo de endereços IP (Start/End IP) e da máscara de sub-rede.*
 
 ![](./images/media/image302.png)
 
-*Figura 250 - Configuração de exclusões de endereços IP e atraso na
-transmissão de mensagens DHCP.*
+*Figura 250 - Configuração de exclusões de endereços IP e atraso na transmissão de mensagens DHCP.*
 
 No ecrã **\'Lease Duration\'**, deve definir o tempo de concessão dos
 endereços IP, sendo o valor predefinido de 8 dias adequado para a
@@ -4101,18 +3873,15 @@ DNS.
 
 ![](./images/media/image303.png)
 
-*Figura 251 - Definição da duração da concessão (Lease Duration) para os
-endereços IP.*
+*Figura 251 - Definição da duração da concessão (Lease Duration) para os endereços IP.*
 
 ![](./images/media/image304.png)
 
-*Figura 252 - Seleção da opção para configurar de imediato os parâmetros
-adicionais do âmbito.*
+*Figura 252 - Seleção da opção para configurar de imediato os parâmetros adicionais do âmbito.*
 
 ![](./images/media/image305.png)
 
-*Figura 253 - Configuração do endereço IP do Router (Default Gateway)
-para o novo âmbito.*
+*Figura 253 - Configuração do endereço IP do Router (Default Gateway) para o novo âmbito.*
 
 No ecrã **\'Domain Name and DNS Servers\'**, confirme o nome do domínio
 e os endereços dos servidores DNS, que deverão estar preenchidos
@@ -4124,8 +3893,7 @@ prosseguir.
 
 ![](./images/media/image306.png)
 
-*Figura 254 - Configuração do nome de domínio e servidores DNS para o
-novo âmbito.*
+*Figura 254 - Configuração do nome de domínio e servidores DNS para o novo âmbito.*
 
 ![](./images/media/image307.png)
 
@@ -4134,13 +3902,11 @@ novo âmbito.*
 
 ![](./images/media/image308.png)
 
-*Figura 256 - Seleção da opção para ativar o novo âmbito (Scope) de DHCP
-imediatamente.*
+*Figura 256 - Seleção da opção para ativar o novo âmbito (Scope) de DHCP imediatamente.*
 
 ![](./images/media/image309.png)
 
-*Figura 257 - Conclusão do assistente e criação bem-sucedida do novo
-Âmbito de DHCP.*
+*Figura 257 - Conclusão do assistente e criação bem-sucedida do novo Âmbito de DHCP.*
 
 A configuração do serviço DHCP foi concluída com sucesso. Como
 demonstrado na consola de gestão, o novo âmbito encontra-se no
@@ -4169,8 +3935,7 @@ da estrutura do domínio.
 
 ![](./images/media/image311.png)
 
-*Figura 259 - Acesso à consola de gestão de Utilizadores e Computadores
-do Active Directory.*
+*Figura 259 - Acesso à consola de gestão de Utilizadores e Computadores do Active Directory.*
 
 ##### Estruturação Hierárquica de Unidades Organizativas (OUs)
 
@@ -4198,28 +3963,23 @@ com os privilégios de IT no \"Norte\".
 
 ![](./images/media/image312.png)
 
-*Figura 260 - Criação da Unidade Organizativa (OU) \"Este\" no domínio
-AntMarMat.win através da consola ADUC.*
+*Figura 260 - Criação da Unidade Organizativa (OU) \"Este\" no domínio AntMarMat.win através da consola ADUC.*
 
 ![](./images/media/image313.png)
 
-*Figura 261 - Criação da Unidade Organizativa (OU) Sul no domínio
-AntMarMat.win.*
+*Figura 261 - Criação da Unidade Organizativa (OU) Sul no domínio AntMarMat.win.*
 
 ![](./images/media/image314.png)
 
-*Figura 262 - Criação da Unidade Organizativa (OU) Norte no domínio
-AntMarMat.win.*
+*Figura 262 - Criação da Unidade Organizativa (OU) Norte no domínio AntMarMat.win.*
 
 ![](./images/media/image315.png)
 
-*Figura 263 - Criação da Unidade Organizativa (OU) Grupos na raiz do
-domínio AntMarMat.win.*
+*Figura 263 - Criação da Unidade Organizativa (OU) Grupos na raiz do domínio AntMarMat.win.*
 
 ![](./images/media/image316.png)
 
-*Figura 264 - Estrutura final das Unidades Organizativas (OUs)
-principais no domínio AntMarMat.win.*
+*Figura 264 - Estrutura final das Unidades Organizativas (OUs) principais no domínio AntMarMat.win.*
 
 #####  Implementação de Grupos de Segurança Globais
 
@@ -4238,33 +3998,27 @@ Organizativa (**Grupos**):
 
 ![](./images/media/image317.png)
 
-*Figura 265 - Processo de criação de um novo Grupo de Segurança no
-interior da OU Grupos.*
+*Figura 265 - Processo de criação de um novo Grupo de Segurança no interior da OU Grupos.*
 
 ![](./images/media/image318.png)
 
-*Figura 266 - Definição do nome e tipo de grupo (Security - Global) para
-o grupo ITGeral.*
+*Figura 266 - Definição do nome e tipo de grupo (Security - Global) para o grupo ITGeral.*
 
 ![](./images/media/image319.png)
 
-*Figura 267 - Criação do grupo de segurança ITNorte no interior da OU
-Grupos.*
+*Figura 267 - Criação do grupo de segurança ITNorte no interior da OU Grupos.*
 
 ![](./images/media/image320.png)
 
-*Figura 268 - Criação do grupo de segurança ITSul no interior da OU
-Grupos.*
+*Figura 268 - Criação do grupo de segurança ITSul no interior da OU Grupos.*
 
 ![](./images/media/image321.png)
 
-*Figura 269 - Criação do grupo de segurança ITEste no interior da OU
-Grupos.*
+*Figura 269 - Criação do grupo de segurança ITEste no interior da OU Grupos.*
 
 ![](./images/media/image322.png)
 
-*Figura 270 - Criação do grupo de segurança RHGeral no interior da OU
-Grupos.*
+*Figura 270 - Criação do grupo de segurança RHGeral no interior da OU Grupos.*
 
 ##### Configuração de Subunidades Organizativas (Sub-OUs)
 
@@ -4278,23 +4032,19 @@ delegações (Norte, Sul e Este).
 
 ![](./images/media/image323.png)
 
-*Figura 271 - Criação de Sub-OU departamental no interior da Unidade
-Organizativa Este.*
+*Figura 271 - Criação de Sub-OU departamental no interior da Unidade Organizativa Este.*
 
 ![](./images/media/image324.png)
 
-*Figura 272 - Criação da Sub-OU IT no interior da Unidade Organizativa
-Este.*
+*Figura 272 - Criação da Sub-OU IT no interior da Unidade Organizativa Este.*
 
 ![](./images/media/image325.png)
 
-*Figura 273 - Criação da Sub-OU Formacao no interior da Unidade
-Organizativa Este.*
+*Figura 273 - Criação da Sub-OU Formacao no interior da Unidade Organizativa Este.*
 
 ![](./images/media/image326.png)
 
-*Figura 274 - Criação da Sub-OU RH no interior da Unidade Organizativa
-Este.*
+*Figura 274 - Criação da Sub-OU RH no interior da Unidade Organizativa Este.*
 
 Este procedimento de segmentação foi replicado de forma idêntica para a
 estruturação das restantes sub-OUs em todas as localizações geográficas.
@@ -4341,38 +4091,31 @@ permissões de rede definidas para o seu setor específico.
 
 ![](./images/media/image328.png)
 
-*Figura 276 - Processo de criação de um novo utilizador no interior da
-Sub-OU IT da delegação Este.*
+*Figura 276 - Processo de criação de um novo utilizador no interior da Sub-OU IT da delegação Este.*
 
 ![](./images/media/image329.png)
 
-*Figura 277 - Definição do User logon name para o novo utilizador na
-sub-OU IT da delegação Este.*
+*Figura 277 - Definição do User logon name para o novo utilizador na sub-OU IT da delegação Este.*
 
 ![](./images/media/image330.png)
 
-*Figura 278 - Definição da password inicial e das políticas de início de
-sessão para o utilizador.*
+*Figura 278 - Definição da password inicial e das políticas de início de sessão para o utilizador.*
 
 ![](./images/media/image331.png)
 
-*Figura 279 - Confirmação final dos dados do novo objeto utilizador no
-domínio AntMarMat.win.*
+*Figura 279 - Confirmação final dos dados do novo objeto utilizador no domínio AntMarMat.win.*
 
 ![](./images/media/image332.png)
 
-*Figura 280 - Criação do utilizador na Sub-OU Formacao da delegação
-Este.*
+*Figura 280 - Criação do utilizador na Sub-OU Formacao da delegação Este.*
 
 ![](./images/media/image333.png)
 
-*Figura 281 - Definição de password e políticas de conta para o
-utilizador na Sub-OU Formacao da delegação Este.*
+*Figura 281 - Definição de password e políticas de conta para o utilizador na Sub-OU Formacao da delegação Este.*
 
 ![](./images/media/image334.png)
 
-*Figura 282 - Resumo final da criação do utilizador na Sub-OU Formacao
-da delegação Este.*
+*Figura 282 - Resumo final da criação do utilizador na Sub-OU Formacao da delegação Este.*
 
 ![](./images/media/image335.png)
 
@@ -4380,13 +4123,11 @@ da delegação Este.*
 
 ![](./images/media/image336.png)
 
-*Figura 284 - Definição de password e parâmetros de segurança para o
-utilizador na Sub-OU RH da delegação Este*
+*Figura 284 - Definição de password e parâmetros de segurança para o utilizador na Sub-OU RH da delegação Este*
 
 ![](./images/media/image337.png)
 
-*Figura 285 - Finalização do processo de criação do utilizador na Sub-OU
-RH da delegação Este.*
+*Figura 285 - Finalização do processo de criação do utilizador na Sub-OU RH da delegação Este.*
 
 O procedimento de provisionamento descrito foi replicado para a criação
 de todos os utilizadores previstos no projeto, garantindo a sua correta
@@ -4406,18 +4147,15 @@ utilizador.
 
 ![](./images/media/image338.png)
 
-*Figura 286 - Início do processo de associação de um utilizador a um
-grupo através da opção \"Add to a group\...\".*
+*Figura 286 - Início do processo de associação de um utilizador a um grupo através da opção \"Add to a group\...\".*
 
 ![](./images/media/image339.png)
 
-*Figura 287 - Pesquisa e seleção do grupo de segurança ITEste para
-associação ao utilizador.*
+*Figura 287 - Pesquisa e seleção do grupo de segurança ITEste para associação ao utilizador.*
 
 ![](./images/media/image340.png)
 
-*Figura 288 - Confirmação da conclusão com sucesso da operação de
-associação do utilizador ao respetivo grupo de segurança.*
+*Figura 288 - Confirmação da conclusão com sucesso da operação de associação do utilizador ao respetivo grupo de segurança.*
 
 A validação da correta associação foi efetuada acedendo
 às **propriedades do objeto utilizador**, especificamente no
@@ -4426,8 +4164,7 @@ grupos de segurança atribuídos.
 
 ![](./images/media/image341.png)
 
-*Figura 289 - Verificação da pertença ao grupo ITEste no separador
-Member Of das propriedades do utilizador.*
+*Figura 289 - Verificação da pertença ao grupo ITEste no separador Member Of das propriedades do utilizador.*
 
 ![](./images/media/image342.png)
 
@@ -4442,8 +4179,7 @@ função.
 
 ![](./images/media/image343.png)
 
-*Figura 291 - Verificação da lista de utilizadores associados no
-separador Members do grupo de segurança ITEste.*
+*Figura 291 - Verificação da lista de utilizadores associados no separador Members do grupo de segurança ITEste.*
 
 O procedimento de provisionamento e associação foi replicado
 exaustivamente para todos os utilizadores do domínio, garantindo a
@@ -4482,8 +4218,7 @@ grupo (**GPOs**), conforme os requisitos de segurança do projeto.
 
 ![](./images/media/image345.png)
 
-*Figura 292 - Visualização da árvore de diretórios e OUs na consola
-Group Policy Management.*
+*Figura 292 - Visualização da árvore de diretórios e OUs na consola Group Policy Management.*
 
 ##### Configuração de Políticas de Segurança de Conta ao Nível de Domínio
 
@@ -4507,8 +4242,7 @@ assegurando a sua propagação por todas as Unidades Organizativas (OUs).
 
 ![](./images/media/image346.png)
 
-*Figura 293 - Criação e vinculação automática de uma nova GPO na raiz do
-domínio AntMarMat.win.*
+*Figura 293 - Criação e vinculação automática de uma nova GPO na raiz do domínio AntMarMat.win.*
 
 -   **Identificação do Objeto:** Atribuição de uma nomenclatura
     descritiva ao novo objeto
@@ -4522,8 +4256,7 @@ domínio AntMarMat.win.*
 
 ![](./images/media/image347.png)
 
-*Figura 294 - Atribuição do nome e criação da nova GPO de segurança no
-domínio AntMarMat.win.*
+*Figura 294 - Atribuição do nome e criação da nova GPO de segurança no domínio AntMarMat.win.*
 
 -   **Acesso ao Editor:** No console GPMC, efetuou-se um clique com o
     botão direito sobre a GPO criada, selecionando a
@@ -4552,13 +4285,11 @@ domínio AntMarMat.win.*
 
 ![](./images/media/image348.png)
 
-*Figura 295 - Acesso ao menu de edição da GPO
-Politica_PalavrasPasse_Bloqueio no console GPMC.*
+*Figura 295 - Acesso ao menu de edição da GPO Politica_PalavrasPasse_Bloqueio no console GPMC.*
 
 ![](./images/media/image349.png)
 
-*Figura 296 - Definição do comprimento mínimo da palavra-passe (Minimum
-password length) para 12 caracteres*
+*Figura 296 - Definição do comprimento mínimo da palavra-passe (Minimum password length) para 12 caracteres*
 
 ![](./images/media/image350.png)
 
@@ -4567,13 +4298,11 @@ as palavras-passe do domínio.
 
 ![](./images/media/image351.png)
 
-*Figura 298 - Configuração da validade máxima da palavra-passe (Maximum
-password age) para 42 dias.*
+*Figura 298 - Configuração da validade máxima da palavra-passe (Maximum password age) para 42 dias.*
 
 ![](./images/media/image352.png)
 
-*Figura 299 - Vista consolidada das diretivas configuradas na Password
-Policy do domínio.*
+*Figura 299 - Vista consolidada das diretivas configuradas na Password Policy do domínio.*
 
 -   **Configuração da Política de Bloqueio de Conta:** No mesmo
     diretório de políticas de segurança (Account Policies), acedeu-se à
@@ -4599,13 +4328,11 @@ Policy do domínio.*
 
 ![](./images/media/image354.png)
 
-*Figura 301 - Definição da duração do bloqueio de conta (Account lockout
-duration) para 15 minutos.*
+*Figura 301 - Definição da duração do bloqueio de conta (Account lockout duration) para 15 minutos.*
 
 ![](./images/media/image355.png)
 
-*Figura 302 - Configuração do intervalo para reposição do contador de
-bloqueio (Reset account lockout counter after) para 15 minutos.*
+*Figura 302 - Configuração do intervalo para reposição do contador de bloqueio (Reset account lockout counter after) para 15 minutos.*
 
 ![](./images/media/image356.png)
 
@@ -4618,18 +4345,15 @@ do domínio.
 
 ![](./images/media/image357.png)
 
-*Figura 304 - Confirmação da vinculação (Link) da GPO
-Politica_PalavrasPasse_Bloqueio à raiz do domínio AntMarMat.win.*
+*Figura 304 - Confirmação da vinculação (Link) da GPO Politica_PalavrasPasse_Bloqueio à raiz do domínio AntMarMat.win.*
 
 ![](./images/media/image358.png)
 
-*Figura 305 - Visualização do separador Details da GPO, confirmando o
-estado (Enabled) e o domínio de origem (AntMarMat.win).*
+*Figura 305 - Visualização do separador Details da GPO, confirmando o estado (Enabled) e o domínio de origem (AntMarMat.win).*
 
 ![](./images/media/image359.png)
 
-*Figura 306 - Visualização do separador Settings, detalhando as
-diretivas de Password Policy e Account Lockout Policy configuradas na
+*Figura 306 - Visualização do separador Settings, detalhando as diretivas de Password Policy e Account Lockout Policy configuradas na
 GPO.*
 
 ### Configuração de Diretivas de Firewall do Windows (Zona Green)
@@ -4656,13 +4380,11 @@ necessidades operacionais de cada departamento.
 
 ![](./images/media/image360.png)
 
-*Figura 307 - Criação e vinculação da GPO de Firewall à Unidade
-Organizativa IT do domínio.*
+*Figura 307 - Criação e vinculação da GPO de Firewall à Unidade Organizativa IT do domínio.*
 
 ![](./images/media/image361.png)
 
-*Figura 308 - Atribuição do nome Politica_Firewall_Windows à nova GPO no
-domínio AntMarMat.win.*
+*Figura 308 - Atribuição do nome Politica_Firewall_Windows à nova GPO no domínio AntMarMat.win.*
 
 -   **Editamos a GPO:** Após a criação do objeto, acedeu-se à interface
     de edição para parametrizar as regras de segurança e os perfis de
@@ -4670,8 +4392,7 @@ domínio AntMarMat.win.*
 
 ![](./images/media/image362.png)
 
-*Figura 309 - Acesso ao menu de edição da GPO Politica_Firewall_Windows
-através da consola de gestão de políticas de grupo.*
+*Figura 309 - Acesso ao menu de edição da GPO Politica_Firewall_Windows através da consola de gestão de políticas de grupo.*
 
 -   **Navegação Hierárquica:** No Editor de GPO, acedeu-se ao caminho de
     configuração do computador para gerir a segurança de rede:
@@ -4690,26 +4411,22 @@ através da consola de gestão de políticas de grupo.*
 
 ![](./images/media/image363.png)
 
-*Figura 310 - Acesso às propriedades globais da Windows Defender
-Firewall na consola de edição de GPO.*
+*Figura 310 - Acesso às propriedades globais da Windows Defender Firewall na consola de edição de GPO.*
 
 -   Para cada perfil (Domain, Private, Public): Definimos **Firewall
     state** = On (recommended).
 
 ![](./images/media/image364.png)
 
-*Figura 311 - Ativação do estado da firewall (On (recommended)) para o
-perfil de domínio (Domain Profile).*
+*Figura 311 - Ativação do estado da firewall (On (recommended)) para o perfil de domínio (Domain Profile).*
 
 ![](./images/media/image365.png)
 
-*Figura 312 - Ativação do estado da firewall (On (recommended)) para o
-perfil privado (Private Profile).*
+*Figura 312 - Ativação do estado da firewall (On (recommended)) para o perfil privado (Private Profile).*
 
 ![](./images/media/image366.png)
 
-*Figura 313 - Ativação do estado da firewall (On (recommended)) para o
-perfil público (Public Profile).*
+*Figura 313 - Ativação do estado da firewall (On (recommended)) para o perfil público (Public Profile).*
 
 -   **Finalização e Âmbito de Aplicação:** Concluída a parametrização,
     encerrou-se o editor. A política encontra-se agora ativa e
@@ -4720,19 +4437,16 @@ perfil público (Public Profile).*
 
 ![](./images/media/image367.png)
 
-*Figura 314 - Confirmação da vinculação da Politica_Firewall_Windows à
-Unidade Organizativa de destino na consola GPMC.*
+*Figura 314 - Confirmação da vinculação da Politica_Firewall_Windows à Unidade Organizativa de destino na consola GPMC.*
 
 ![](./images/media/image368.png)
 
-*Figura 315 - Visualização dos detalhes da GPO
-Politica_Firewall_Windows, confirmando o seu estado como Enabled e o
+*Figura 315 - Visualização dos detalhes da GPO Politica_Firewall_Windows, confirmando o seu estado como Enabled e o
 domínio de origem.*
 
 ![](./images/media/image369.png)
 
-*Figura 316 - Visualização do separador Scope, confirmando a vinculação
-da GPO à OU IT e os filtros de segurança aplicados.*
+*Figura 316 - Visualização do separador Scope, confirmando a vinculação da GPO à OU IT e os filtros de segurança aplicados.*
 
 ##### Replicação da Política de Firewall para as Restantes Localizações
 
@@ -4779,18 +4493,15 @@ seguintes:
 
 ![](./images/media/image371.png)
 
-*Figura 317 - Seleção da opção \"Link an Existing GPO\...\" na sub-OU IT
-da delegação Sul.*
+*Figura 317 - Seleção da opção \"Link an Existing GPO\...\" na sub-OU IT da delegação Sul.*
 
 ![](./images/media/image372.png)
 
-*Figura 318 - Seleção do objeto de política Politica_Firewall_Windows na
-lista de GPOs do domínio.*
+*Figura 318 - Seleção do objeto de política Politica_Firewall_Windows na lista de GPOs do domínio.*
 
 ![](./images/media/image373.png)
 
-*Figura 319 - Visualização da GPO de Firewall vinculada com sucesso às
-sub-OUs IT das delegações Este, Norte e Sul.*
+*Figura 319 - Visualização da GPO de Firewall vinculada com sucesso às sub-OUs IT das delegações Este, Norte e Sul.*
 
 ##### Implementação de Diretivas de Restrição de Início de Sessão (Logon)
 
@@ -4815,13 +4526,11 @@ acessos não autorizados por parte de outros utilizadores do domínio.
 
 ![](./images/media/image374.png)
 
-*Figura 320 - Seleção da opção \"Create a GPO in this domain, and Link
-it here\...\" na sub-OU IT da delegação Este.*
+*Figura 320 - Seleção da opção \"Create a GPO in this domain, and Link it here\...\" na sub-OU IT da delegação Este.*
 
 ![](./images/media/image375.png)
 
-*Figura 321 - Atribuição do nome Politica_Restricoes_Logon ao novo
-objeto de política de grupo.*
+*Figura 321 - Atribuição do nome Politica_Restricoes_Logon ao novo objeto de política de grupo.*
 
 -   **Edição e Configuração de Acessos:** No console GPMC, acedeu-se ao
     menu de edição da política para definir os privilégios de acesso
@@ -4829,8 +4538,7 @@ objeto de política de grupo.*
 
 ![](./images/media/image376.png)
 
-*Figura 322 - Acesso ao menu de edição da
-GPO **Politica_Restricoes_Logon** para configuração de direitos de
+*Figura 322 - Acesso ao menu de edição da GPO **Politica_Restricoes_Logon** para configuração de direitos de
 utilizador.*
 
 -   Computer Configuration à Policies à Windows Settings à Security
@@ -4858,34 +4566,28 @@ utilizador.*
 
 ![](./images/media/image377.png)
 
-*Figura 323 - Seleção da diretiva Allow log on locally no nó de
-atribuição de direitos de utilizador (User Rights Assignment).*
+*Figura 323 - Seleção da diretiva Allow log on locally no nó de atribuição de direitos de utilizador (User Rights Assignment).*
 
 ![](./images/media/image378.png)
 
-*Figura 324 - Ativação da diretiva e acesso ao menu de adição de
-utilizadores ou grupos (**Add User or Group**).*
+*Figura 324 - Ativação da diretiva e acesso ao menu de adição de utilizadores ou grupos (**Add User or Group**).*
 
 ![](./images/media/image379.png)
 
-*Figura 325 - Adição do grupo de segurança **ITGeral** à lista de
-permissões da diretiva **Allow log on locally**.*
+*Figura 325 - Adição do grupo de segurança **ITGeral** à lista de permissões da diretiva **Allow log on locally**.*
 
 ![](./images/media/image380.png)
 
-*Figura 326 - Confirmação da inclusão dos
-grupos **Administrators** e **ITGeral** na diretiva de início de sessão
+*Figura 326 - Confirmação da inclusão dos grupos **Administrators** e **ITGeral** na diretiva de início de sessão
 local.*
 
 ![](./images/media/image381.png)
 
-*Figura 327 - Aplicação e confirmação das definições da diretiva **Allow
-log on locally** para os grupos selecionados.*
+*Figura 327 - Aplicação e confirmação das definições da diretiva **Allow log on locally** para os grupos selecionados.*
 
 ![](./images/media/image382.png)
 
-*Figura 328 - Visualização da diretiva **Allow log on locally** com os
-grupos de segurança autorizados no Editor de Gestão de Políticas de
+*Figura 328 - Visualização da diretiva **Allow log on locally** com os grupos de segurança autorizados no Editor de Gestão de Políticas de
 Grupo.*
 
 ![](./images/media/image383.png)
@@ -4896,8 +4598,7 @@ local.*
 
 ![](./images/media/image384.png)
 
-*Figura 330 - Configuração da diretiva **Deny log on locally** para
-impedir o acesso local aos grupos de **Formação** e **RH** no domínio.*
+*Figura 330 - Configuração da diretiva **Deny log on locally** para impedir o acesso local aos grupos de **Formação** e **RH** no domínio.*
 
 ##### Propagação e Validação das Políticas de Grupo (GPO)
 
@@ -4949,8 +4650,7 @@ todos os objetos do domínio.
 
 ![](./images/media/image386.png)
 
-*Figura 331 - Verificação da hierarquia de domínios e das definições de
-segurança aplicadas ao perfil de Administrador no Windows Server.*
+*Figura 331 - Verificação da hierarquia de domínios e das definições de segurança aplicadas ao perfil de Administrador no Windows Server.*
 
 **Testes de Validação (Windows 11 - Zona Green)**
 
@@ -4965,31 +4665,26 @@ cliente, garantindo a integridade da Zona Green.
 
 ![](./images/media/image388.png)
 
-*Figura 332 - Verificação dos grupos de segurança e validação da correta
-integração do cliente Windows 11 no domínio corporativo.*
+*Figura 332 - Verificação dos grupos de segurança e validação da correta integração do cliente Windows 11 no domínio corporativo.*
 
 ![](./images/media/image389.png)
 
-*Figura 333 - Execução do comando gpupdate /force no Windows 11,
-confirmando a receção e aplicação imediata das diretivas de computador e
+*Figura 333 - Execução do comando gpupdate /force no Windows 11, confirmando a receção e aplicação imediata das diretivas de computador e
 utilizador.*
 
 ![](./images/media/image390.png)
 
-*Figura 334 - Interface da Firewall no Windows 11 exibindo a restrição
-de gestão pelo administrador, validando a aplicação da GPO de
+*Figura 334 - Interface da Firewall no Windows 11 exibindo a restrição de gestão pelo administrador, validando a aplicação da GPO de
 segurança.*
 
 ![](./images/media/image391.png)
 
-*Figura 335 - Teste de autenticação no Windows 11 com um utilizador do
-domínio, validando o processo de início de sessão na estação de trabalho
+*Figura 335 - Teste de autenticação no Windows 11 com um utilizador do domínio, validando o processo de início de sessão na estação de trabalho
 cliente.*
 
 ![](./images/media/image392.png)
 
-*Figura 336 - Validação da diretiva Deny log on locally: mensagem de
-erro ao tentar o início de sessão com um utilizador sem permissões para
+*Figura 336 - Validação da diretiva Deny log on locally: mensagem de erro ao tentar o início de sessão com um utilizador sem permissões para
 esta estação de trabalho.*
 
 ## Implementação de NPS/RADIUS para Autenticação OpenVPN (Exclusiva IT)
@@ -5013,18 +4708,15 @@ IT tenha acesso remoto, procedeu-se à instalação do serviço NPS:
 
 ![](./images/media/image393.png)
 
-*Figura 337 - Acesso ao assistente de configuração no Windows Server
-para a adição da função de Network Policy and Access Services (NPS).*
+*Figura 337 - Acesso ao assistente de configuração no Windows Server para a adição da função de Network Policy and Access Services (NPS).*
 
 ![](./images/media/image394.png)
 
-*Figura 338 - Seleção do método de instalação por função (Role-based) no
-Windows Server para a implementação do serviço RADIUS.*
+*Figura 338 - Seleção do método de instalação por função (Role-based) no Windows Server para a implementação do serviço RADIUS.*
 
 ![](./images/media/image395.png)
 
-*Figura 339 - Seleção do servidor de destino (WINSERVER_AMM) para a
-instalação da função NPS.*
+*Figura 339 - Seleção do servidor de destino (WINSERVER_AMM) para a instalação da função NPS.*
 
 ![](./images/media/image396.png)
 
@@ -5043,18 +4735,15 @@ necessárias para o suporte ao serviço NPS.
 
 ![](./images/media/image399.png)
 
-*Figura 343 - Ecrã informativo detalhando as capacidades do serviço
-Network Policy and Access Services para autenticação RADIUS.*
+*Figura 343 - Ecrã informativo detalhando as capacidades do serviço Network Policy and Access Services para autenticação RADIUS.*
 
 ![](./images/media/image400.png)
 
-*Figura 344 - Verificação final das funções e ferramentas de
-administração a instalar antes do início do processo.*
+*Figura 344 - Verificação final das funções e ferramentas de administração a instalar antes do início do processo.*
 
 ![](./images/media/image401.png)
 
-*Figura 345 - Conclusão do assistente com sucesso, confirmando a
-instalação da função NPS no controlador de domínio.*
+*Figura 345 - Conclusão do assistente com sucesso, confirmando a instalação da função NPS no controlador de domínio.*
 
 ##### Autorização do NPS no Domínio
 
@@ -5078,8 +4767,7 @@ domínio:
 
 ![](./images/media/image402.png)
 
-*Figura 346 - Registo e autorização do servidor NPS no Active Directory
-para permitir a consulta e validação de credenciais de utilizadores do
+*Figura 346 - Registo e autorização do servidor NPS no Active Directory para permitir a consulta e validação de credenciais de utilizadores do
 domínio.*
 
 ##### Configuração do RADIUS Client (OPNsense)
@@ -5116,14 +4804,12 @@ servidor NPS, foi necessário registá-la como um cliente RADIUS:
 
 ![](./images/media/image404.png)
 
-*Figura 348 - Configuração detalhada do cliente RADIUS (OPNsense) com o
-endereço IP 172.30.50.97 e a definição da chave partilhada (Shared
+*Figura 348 - Configuração detalhada do cliente RADIUS (OPNsense) com o endereço IP 172.30.50.97 e a definição da chave partilhada (Shared
 Secret).*
 
 ![](./images/media/image405.png)
 
-*Figura 349 - Listagem de clientes RADIUS configurados, confirmando o
-estado \"Enabled\" para o ponto de acesso remoto MarteSuf-OpenVPN.*
+*Figura 349 - Listagem de clientes RADIUS configurados, confirmando o estado \"Enabled\" para o ponto de acesso remoto MarteSuf-OpenVPN.*
 
 ##### Criação de Diretivas de Rede (Network Policies)
 
@@ -5141,8 +4827,7 @@ define as condições de acesso remoto para os utilizadores do domínio:
 
 ![](./images/media/image406.png)
 
-*Figura 350 - Início da criação de uma nova diretiva de rede (Network
-Policy) para definir as condições de acesso à OpenVPN.*
+*Figura 350 - Início da criação de uma nova diretiva de rede (Network Policy) para definir as condições de acesso à OpenVPN.*
 
 ##### Identificação da Diretiva de Rede 
 
@@ -5160,8 +4845,7 @@ do tipo de servidor de acesso que irá consumir esta política:
 
 ![](./images/media/image407.png)
 
-*Figura 351 - Definição do nome da diretiva (VPN_IT_Auth) e seleção do
-tipo de servidor de acesso (Remote Access Server) para o túnel VPN.*
+*Figura 351 - Definição do nome da diretiva (VPN_IT_Auth) e seleção do tipo de servidor de acesso (Remote Access Server) para o túnel VPN.*
 
 **Definição de Condições de Acesso (Segregação de Grupos)**
 
@@ -5187,13 +4871,11 @@ túnel VPN, restringindo o acesso exclusivamente à equipa técnica:
 
 ![](./images/media/image408.png)
 
-*Figura 352 - Seleção do critério \"Windows Groups\" para restringir a
-autenticação VPN a grupos específicos do Active Directory.*
+*Figura 352 - Seleção do critério \"Windows Groups\" para restringir a autenticação VPN a grupos específicos do Active Directory.*
 
 ![](./images/media/image409.png)
 
-*Figura 353 - Adição dos grupos de segurança IT do domínio como condição
-obrigatória para a validação da política de acesso remoto.*
+*Figura 353 - Adição dos grupos de segurança IT do domínio como condição obrigatória para a validação da política de acesso remoto.*
 
 **Definição de Permissões de Acesso**
 
@@ -5208,8 +4890,7 @@ tomar pelo servidor NPS quando um pedido de autenticação for validado:
 
 ![](./images/media/image410.png)
 
-*Figura 354 - Configuração da permissão de acesso (Access Granted) para
-utilizadores que cumpram os requisitos da diretiva de rede.*
+*Figura 354 - Configuração da permissão de acesso (Access Granted) para utilizadores que cumpram os requisitos da diretiva de rede.*
 
 **Configuração dos Métodos de Autenticação**
 
@@ -5229,18 +4910,15 @@ protocolo de autenticação:
 
 ![](./images/media/image411.png)
 
-*Figura 355 - Seleção do protocolo MS-CHAP-v2 como método de
-autenticação seguro para a diretiva de acesso remoto.*
+*Figura 355 - Seleção do protocolo MS-CHAP-v2 como método de autenticação seguro para a diretiva de acesso remoto.*
 
 ![](./images/media/image412.png)
 
-*Figura 356 - Ecrã de configuração de restrições (Constraints), onde se
-mantiveram as opções por omissão antes de prosseguir no assistente.*
+*Figura 356 - Ecrã de configuração de restrições (Constraints), onde se mantiveram as opções por omissão antes de prosseguir no assistente.*
 
 ![](./images/media/image413.png)
 
-*Figura 357 - Ecrã de configuração de definições (Settings) e atributos
-RADIUS padrão para a diretiva de rede.*
+*Figura 357 - Ecrã de configuração de definições (Settings) e atributos RADIUS padrão para a diretiva de rede.*
 
 ![](./images/media/image414.png)
 
@@ -5249,14 +4927,12 @@ personalização das definições da diretiva de rede.
 
 ![](./images/media/image415.png)
 
-*Figura 359 - Configuração manual do atributo RADIUS (Class),
-estabelecendo uma identificação adicional para a integração com a
+*Figura 359 - Configuração manual do atributo RADIUS (Class), estabelecendo uma identificação adicional para a integração com a
 política de acesso.*
 
 ![](./images/media/image416.png)
 
-*Figura 360 - Resumo das definições de rede e atributos RADIUS
-configurados, incluindo o atributo \"Class\" para identificação do grupo
+*Figura 360 - Resumo das definições de rede e atributos RADIUS configurados, incluindo o atributo \"Class\" para identificação do grupo
 ITGeral.*
 
 ![](./images/media/image417.png)
@@ -5267,8 +4943,7 @@ método de autenticação MS-CHAP-v2.*
 
 ![](./images/media/image418.png)
 
-*Figura 362 - Consola de gestão NPS exibindo a diretiva \"VPN_IT_Auth\"
-ativa e com prioridade máxima na lista de Network Policies.*
+*Figura 362 - Consola de gestão NPS exibindo a diretiva \"VPN_IT_Auth\" ativa e com prioridade máxima na lista de Network Policies.*
 
 ##### Integração e Validação do Servidor RADIUS na OPNsense
 
@@ -5333,26 +5008,22 @@ conectividade:
 
 ![](./images/media/image420.png)
 
-*Figura 363 - Configuração do servidor de autenticação RADIUS na
-OPNsense, com destaque para o endereço IP do controlador de domínio e a
+*Figura 363 - Configuração do servidor de autenticação RADIUS na OPNsense, com destaque para o endereço IP do controlador de domínio e a
 ativação da sincronização de grupos.*
 
 ![](./images/media/image421.png)
 
-*Figura 364 - Listagem dos servidores de autenticação na OPNsense,
-destacando o servidor RADIUS (WinServer_RADIUS) configurado com o
+*Figura 364 - Listagem dos servidores de autenticação na OPNsense, destacando o servidor RADIUS (WinServer_RADIUS) configurado com o
 endereço IP 172.30.50.98.*
 
 ![](./images/media/image422.png)
 
-*Figura 365 - Criação do grupo \"ITGeral\" na OPNsense e atribuição de
-privilégios de administração total (All pages) para utilizadores
+*Figura 365 - Criação do grupo \"ITGeral\" na OPNsense e atribuição de privilégios de administração total (All pages) para utilizadores
 autenticados via RADIUS.*
 
 ![](./images/media/image423.png)
 
-*Figura 366 - Sucesso no teste de autenticação RADIUS (System: Access:
-Tester), confirmando a receção do atributo Class e a correta validação
+*Figura 366 - Sucesso no teste de autenticação RADIUS (System: Access: Tester), confirmando a receção do atributo Class e a correta validação
 das credenciais do utilizador plinha pelo Windows Server.*
 
 ##### Configuração do Método de Autenticação Global
@@ -5379,8 +5050,7 @@ de autenticação para o acesso à interface de gestão:
 
 ![](./images/media/image424.png)
 
-*Figura 367 - Configuração da hierarquia de autenticação na OPNsense,
-integrando o servidor RADIUS como método de validação para o acesso
+*Figura 367 - Configuração da hierarquia de autenticação na OPNsense, integrando o servidor RADIUS como método de validação para o acesso
 administrativo.*
 
 ## Configuração de Recursos Partilhados no Windows Server
@@ -5428,8 +5098,7 @@ partilhada, a atribuição de privilégios será feita em dois níveis:
 
 ![](./images/media/image425.png)
 
-*Figura 368 - Consola do Active Directory exibindo a Unidade
-Organizacional \"Admin\" e a conta de serviço \"user scanner\"
+*Figura 368 - Consola do Active Directory exibindo a Unidade Organizacional \"Admin\" e a conta de serviço \"user scanner\"
 devidamente criada.*
 
 **Criação do Diretório Local e Partilha de Rede**
@@ -5452,8 +5121,7 @@ servidor:
 
 ![](./images/media/image426.png)
 
-*Figura 369 - Criação da pasta \"Relatorios_Vuln\" na raiz do Disco
-Local (C:) do Windows Server para servir como repositório de rede.*
+*Figura 369 - Criação da pasta \"Relatorios_Vuln\" na raiz do Disco Local (C:) do Windows Server para servir como repositório de rede.*
 
 ##### Configuração de Partilha Avançada e Permissões de Rede
 
@@ -5497,8 +5165,7 @@ NTFS.*
 
 ![](./images/media/image428.png)
 
-*Figura 371 - Acesso às definições de \"Advanced Sharing\" para
-configurar a partilha personalizada do diretório no Windows Server.*
+*Figura 371 - Acesso às definições de \"Advanced Sharing\" para configurar a partilha personalizada do diretório no Windows Server.*
 
 ![](./images/media/image429.png)
 
@@ -5508,8 +5175,7 @@ rede.*
 
 ![](./images/media/image430.png)
 
-*Figura 373 - Configuração restritiva de permissões de partilha (Share
-Permissions), atribuindo privilégios de \"Change\" e \"Read\"
+*Figura 373 - Configuração restritiva de permissões de partilha (Share Permissions), atribuindo privilégios de \"Change\" e \"Read\"
 exclusivamente ao utilizador de serviço user_scanner.*
 
 ##### Configuração de Permissões de Segurança (NTFS)
@@ -5534,13 +5200,11 @@ negado, mesmo que as permissões de partilha estejam corretas:
 
 ![](./images/media/image431.png)
 
-*Figura 374 - Acesso ao menu de edição de permissões NTFS para garantir
-privilégios de escrita local ao utilizador de serviço.*
+*Figura 374 - Acesso ao menu de edição de permissões NTFS para garantir privilégios de escrita local ao utilizador de serviço.*
 
 ![](./images/media/image432.png)
 
-*Figura 375 - Acesso ao menu de edição de permissões NTFS para a
-inclusão do utilizador de serviço na Lista de Controlo de Acesso (ACL).*
+*Figura 375 - Acesso ao menu de edição de permissões NTFS para a inclusão do utilizador de serviço na Lista de Controlo de Acesso (ACL).*
 
 ##### Atribuição de Privilégios NTFS ao Utilizador de Serviço
 
@@ -5565,8 +5229,7 @@ configuração da seguinte forma:
 
 ![](./images/media/image433.png)
 
-*Figura 376 - Atribuição final de permissões NTFS ao utilizador
-user_scanner, garantindo o nível de acesso \"Modify\" para a escrita e
+*Figura 376 - Atribuição final de permissões NTFS ao utilizador user_scanner, garantindo o nível de acesso \"Modify\" para a escrita e
 edição de relatórios no servidor.*
 
 ##### Ajuste de Diretivas de Firewall (Tráfego SMB)
@@ -5591,8 +5254,7 @@ ligações de entrada relacionadas com o serviço de ficheiros:
 
 ![](./images/media/image434.png)
 
-*Figura 377 - Acesso às definições avançadas da Firewall do Windows
-Server para a configuração de regras de entrada de partilha de
+*Figura 377 - Acesso às definições avançadas da Firewall do Windows Server para a configuração de regras de entrada de partilha de
 ficheiros.*
 
 ![](./images/media/image435.png)
@@ -5618,8 +5280,7 @@ de **Remote Desktop**:
 
 ![](./images/media/image436.png)
 
-*Figura 379 - Acesso às definições de sistema no Painel de Controlo para
-a ativação das permissões de acesso remoto ao servidor.*
+*Figura 379 - Acesso às definições de sistema no Painel de Controlo para a ativação das permissões de acesso remoto ao servidor.*
 
 **Configuração Avançada de Remote Desktop**
 
@@ -5643,8 +5304,7 @@ políticas de segurança para o acesso remoto:
 
 ![](./images/media/image437.png)
 
-*Figura 380 - Ativação do acesso remoto no Windows Server com reforço de
-segurança através de Autenticação ao Nível da Rede (NLA).*
+*Figura 380 - Ativação do acesso remoto no Windows Server com reforço de segurança através de Autenticação ao Nível da Rede (NLA).*
 
 ##### Configuração de Direitos de Acesso RDP via Group Policy
 
@@ -5674,19 +5334,16 @@ configuração:
 
 ![](./images/media/image438.png)
 
-*Figura 381 - Edição da política \"Allow log on through Remote Desktop
-Services\" no Editor de Política de Grupo Local para autorizar o acesso
+*Figura 381 - Edição da política \"Allow log on through Remote Desktop Services\" no Editor de Política de Grupo Local para autorizar o acesso
 remoto do grupo ITGeral.*
 
 ![](./images/media/image439.png)
 
-*Figura 382 - Acesso às definições da diretiva \"Allow log on through
-Remote Desktop Services\" para a adição do grupo de segurança ITGeral.*
+*Figura 382 - Acesso às definições da diretiva \"Allow log on through Remote Desktop Services\" para a adição do grupo de segurança ITGeral.*
 
 ![](./images/media/image440.png)
 
-*Figura 383 - Seleção e validação do grupo de segurança \"ITGeral\" do
-domínio AntMarMat para atribuição de direitos de logon remoto via RDP.*
+*Figura 383 - Seleção e validação do grupo de segurança \"ITGeral\" do domínio AntMarMat para atribuição de direitos de logon remoto via RDP.*
 
 ![](./images/media/image441.png)
 
@@ -5728,69 +5385,57 @@ do **Windows Server**.
 
 ![](./images/media/image442.png)
 
-*Figura 385 - Início do processo de instalação do Windows 11 Pro, com a
-definição regional para Português (Portugal) e idioma de sistema em
+*Figura 385 - Início do processo de instalação do Windows 11 Pro, com a definição regional para Português (Portugal) e idioma de sistema em
 Inglês.*
 
 ![](./images/media/image443.png)
 
-*Figura 386 - Configuração do esquema de teclado para Português durante
-o processo de instalação do Windows 11 na Zona Green.*
+*Figura 386 - Configuração do esquema de teclado para Português durante o processo de instalação do Windows 11 na Zona Green.*
 
 ![](./images/media/image444.png)
 
-*Figura 387 - Seleção da opção de instalação completa do Windows 11,
-assegurando a remoção de configurações anteriores para uma implementação
+*Figura 387 - Seleção da opção de instalação completa do Windows 11, assegurando a remoção de configurações anteriores para uma implementação
 limpa na Zona Green.*
 
 ![](./images/media/image445.png)
 
-*Figura 388 - Fase de ativação do Windows 11, com a seleção da opção de
-instalação sem chave de produto para fins de demonstração em ambiente de
+*Figura 388 - Fase de ativação do Windows 11, com a seleção da opção de instalação sem chave de produto para fins de demonstração em ambiente de
 laboratório.*
 
 ![](./images/media/image446.png)
 
-*Figura 389 - Seleção da versão Windows 11 Pro, requisito essencial para
-a futura integração da máquina no domínio do Windows Server.*
+*Figura 389 - Seleção da versão Windows 11 Pro, requisito essencial para a futura integração da máquina no domínio do Windows Server.*
 
 ![](./images/media/image447.png)
 
-*Figura 390 - Aceitação dos termos de licenciamento e avisos aplicáveis
-para o sistema operativo Windows 11.*
+*Figura 390 - Aceitação dos termos de licenciamento e avisos aplicáveis para o sistema operativo Windows 11.*
 
 ![](./images/media/image448.png)
 
-*Figura 391 - Seleção da unidade de disco virtual (64 GB) para a
-instalação do Windows 11, utilizando o espaço não alocado para uma
+*Figura 391 - Seleção da unidade de disco virtual (64 GB) para a instalação do Windows 11, utilizando o espaço não alocado para uma
 configuração automática de partições.*
 
 ![](./images/media/image449.png)
 
-*Figura 392 - Resumo das definições de instalação (\"Ready to
-install\"), confirmando a edição Windows 11 Pro e a opção de limpeza
+*Figura 392 - Resumo das definições de instalação (\"Ready to install\"), confirmando a edição Windows 11 Pro e a opção de limpeza
 total de dados.*
 
 ![](./images/media/image450.png)
 
-*Figura 393 - Ecrã de boas-vindas do Windows 11 após a instalação, com a
-seleção da região (Portugal) para a configuração de definições locais.*
+*Figura 393 - Ecrã de boas-vindas do Windows 11 após a instalação, com a seleção da região (Portugal) para a configuração de definições locais.*
 
 ![](./images/media/image451.png)
 
-*Figura 394 - Seleção do esquema de teclado \"Portuguese\", assegurando
-a compatibilidade com o hardware utilizado na Zona Green.*
+*Figura 394 - Seleção do esquema de teclado \"Portuguese\", assegurando a compatibilidade com o hardware utilizado na Zona Green.*
 
 ![](./images/media/image452.png)
 
-*Figura 395 - Verificação da conectividade de rede (\"Network
-Connected\") no Windows 11, confirmando a deteção da placa de rede
+*Figura 395 - Verificação da conectividade de rede (\"Network Connected\") no Windows 11, confirmando a deteção da placa de rede
 virtual e o acesso à infraestrutura.*
 
 ![](./images/media/image453.png)
 
-*Figura 396 - Atribuição do nome de anfitrião (Hostname) W11-GREEN-01
-para facilitar a identificação e gestão do dispositivo no domínio.*
+*Figura 396 - Atribuição do nome de anfitrião (Hostname) W11-GREEN-01 para facilitar a identificação e gestão do dispositivo no domínio.*
 
 ![](./images/media/image454.png)
 
@@ -5800,38 +5445,32 @@ ao domínio do Windows Server.*
 
 ![](./images/media/image455.png)
 
-*Figura 398 - Fase de configuração de segurança do Windows Hello,
-procedendo à criação de um código PIN para o início de sessão no
+*Figura 398 - Fase de configuração de segurança do Windows Hello, procedendo à criação de um código PIN para o início de sessão no
 dispositivo.*
 
 ![](./images/media/image456.png)
 
-*Figura 399 - Ambiente de trabalho do Windows 11 após a instalação, com
-o início automático da implementação das VMware Tools para otimização de
+*Figura 399 - Ambiente de trabalho do Windows 11 após a instalação, com o início automático da implementação das VMware Tools para otimização de
 performance e integração com o anfitrião.*
 
 ![](./images/media/image457.png)
 
-*Figura 400 - Configuração das VMware Tools no Windows 11, selecionando
-o tipo de instalação \"Typical\" para otimizar a interação entre o
+*Figura 400 - Configuração das VMware Tools no Windows 11, selecionando o tipo de instalação \"Typical\" para otimizar a interação entre o
 hardware virtual e o sistema operativo.*
 
 ![](./images/media/image458.png)
 
-*Figura 401 - Início do processo de escrita e instalação das VMware
-Tools no Windows 11 para otimização da placa de rede e do controlador
+*Figura 401 - Início do processo de escrita e instalação das VMware Tools no Windows 11 para otimização da placa de rede e do controlador
 gráfico.*
 
 ![](./images/media/image459.png)
 
-*Figura 402 - Validação do endereçamento IP na Zona Green e teste de
-conectividade (ping) com sucesso ao Controlador de Domínio
+*Figura 402 - Validação do endereçamento IP na Zona Green e teste de conectividade (ping) com sucesso ao Controlador de Domínio
 (172.30.50.98).*
 
 ![](./images/media/image460.png)
 
-*Figura 403 - Configuração de rede no Windows 11 com atribuição dinâmica
-de IP via DHCP e definição manual do servidor DNS (172.30.50.98),
+*Figura 403 - Configuração de rede no Windows 11 com atribuição dinâmica de IP via DHCP e definição manual do servidor DNS (172.30.50.98),
 apontando para o IP do Windows Server (ADDS).*
 
 No terminal (PowerShell), o comando ipconfig confirma que a máquina
@@ -5855,13 +5494,11 @@ domínio **AntMarMat.win**:
 
 ![](./images/media/image461.png)
 
-*Figura 404 - Navegação no menu de sistema do Windows 11 para aceder às
-definições avançadas e iniciar o processo de junção ao domínio.*
+*Figura 404 - Navegação no menu de sistema do Windows 11 para aceder às definições avançadas e iniciar o processo de junção ao domínio.*
 
 ![](./images/media/image462.png)
 
-*Figura 405 - Acesso às Definições de Sistema Avançadas (Advanced system
-settings) no Windows 11 para a configuração do nome de anfitrião e
+*Figura 405 - Acesso às Definições de Sistema Avançadas (Advanced system settings) no Windows 11 para a configuração do nome de anfitrião e
 junção ao domínio.*
 
 **Processo de Junção ao Domínio (Domain Join)**
@@ -5887,36 +5524,30 @@ estação de trabalho ao domínio corporativo:
 
 ![](./images/media/image463.png)
 
-*Figura 406 - Acesso à interface de alteração de domínio no Windows 11
-para iniciar a vinculação da máquina à infraestrutura AntMarMat.win.*
+*Figura 406 - Acesso à interface de alteração de domínio no Windows 11 para iniciar a vinculação da máquina à infraestrutura AntMarMat.win.*
 
 ![](./images/media/image464.png)
 
-*Figura 407 - Configuração do domínio \"AntMarMat.win\" na janela de
-alterações de nome e domínio (Computer Name/Domain Changes) no Windows
+*Figura 407 - Configuração do domínio \"AntMarMat.win\" na janela de alterações de nome e domínio (Computer Name/Domain Changes) no Windows
 11.*
 
 ![](./images/media/image465.png)
 
-*Figura 408 - Autenticação no domínio utilizando a conta de serviço
-plinha@AntMarMat.win para autorizar a junção do cliente Windows 11 à
+*Figura 408 - Autenticação no domínio utilizando a conta de serviço plinha@AntMarMat.win para autorizar a junção do cliente Windows 11 à
 infraestrutura centralizada.*
 
 ![](./images/media/image466.png)
 
-*Figura 409 - Mensagem de confirmação \"Welcome to the AntMarMat.win
-domain\", validando a correta integração e reconhecimento do cliente
+*Figura 409 - Mensagem de confirmação \"Welcome to the AntMarMat.win domain\", validando a correta integração e reconhecimento do cliente
 Windows 11 no domínio.*
 
 ![](./images/media/image467.png)
 
-*Figura 410 - Interface de início de sessão no Windows 11, confirmando a
-autenticação do utilizador plinha no domínio corporativo ANTMARMAT.*
+*Figura 410 - Interface de início de sessão no Windows 11, confirmando a autenticação do utilizador plinha no domínio corporativo ANTMARMAT.*
 
 ![](./images/media/image468.png)
 
-*Figura 411 - Verificação das informações da conta no Windows 11,
-confirmando o início de sessão bem-sucedido com o utilizador do domínio
+*Figura 411 - Verificação das informações da conta no Windows 11, confirmando o início de sessão bem-sucedido com o utilizador do domínio
 \"Pedro Linha\" (ANTMARMAT\\plinha).*
 
 ##### Gestão de Objetos de Computador no Active Directory
@@ -5939,20 +5570,17 @@ correta aplicação das diretivas de segurança:
 
 ![](./images/media/image469.png)
 
-*Figura 412 - Visualização do objeto de computador WINCLIENT no Active
-Directory, confirmando o registo bem-sucedido da máquina no domínio
+*Figura 412 - Visualização do objeto de computador WINCLIENT no Active Directory, confirmando o registo bem-sucedido da máquina no domínio
 AntMarMat.win.*
 
 ![](./images/media/image470.png)
 
-*Figura 413 - Confirmação da relocalização do objeto de computador
-WINCLIENT para a Unidade Organizacional (OU) de destino, garantindo a
+*Figura 413 - Confirmação da relocalização do objeto de computador WINCLIENT para a Unidade Organizacional (OU) de destino, garantindo a
 herança das GPOs de segurança.*
 
 ![](./images/media/image471.png)
 
-*Figura 414 - Visualização da Unidade Organizacional (OU) \"IT\" no
-domínio, contendo o utilizador \"Pedro Linha\" e o computador
+*Figura 414 - Visualização da Unidade Organizacional (OU) \"IT\" no domínio, contendo o utilizador \"Pedro Linha\" e o computador
 \"WINCLIENT\" devidamente agrupados para a aplicação das diretivas de
 segurança.*
 
@@ -6008,8 +5636,7 @@ via rede, utilizando protocolos de comunicação segura:
 
 ![](./images/media/image475.png)
 
-*Figura 416 - Transferência segura do instalador do NXLog via SCP,
-demonstrando a validação da chave SSH e o sucesso na cópia do ficheiro
+*Figura 416 - Transferência segura do instalador do NXLog via SCP, demonstrando a validação da chave SSH e o sucesso na cópia do ficheiro
 para o servidor remoto.*
 
 Nesta fase, **preparou-se** o servidor para administração remota
@@ -6065,8 +5692,7 @@ reencaminhamento de logs:
 
 ![](./images/media/image477.png)
 
-*Figura 418 - Configuração do ficheiro nxlog.conf no Windows Server
-Core.*
+*Figura 418 - Configuração do ficheiro nxlog.conf no Windows Server Core.*
 
 # 
 
@@ -6081,8 +5707,7 @@ localizado na zona **VenusSuf**.
 
 ![](./images/media/image478.png)
 
-*Figura 419 - Configuração e teste de reencaminhamento de logs no
-servidor WAF.*
+*Figura 419 - Configuração e teste de reencaminhamento de logs no servidor WAF.*
 
 No terminal apresentado, **realizaram-se** os seguintes procedimentos
 técnicos:
@@ -6111,396 +5736,322 @@ técnicos:
 
 **A**
 
-**ACL** *(Access Control List)* --- Lista de regras que permitem ou
-negam tráfego de rede com base em critérios como endereço IP de
+**ACL** *(Access Control List)* --- Lista de regras que permitem ou negam tráfego de rede com base em critérios como endereço IP de
 origem/destino, porto e protocolo. No Router Cisco, a ACL 1 controla
 quais as redes que podem fazer NAT, e a ACL 10 restringe o acesso SSH à
 VLAN de gestão.
 
-**Active Directory (AD)** --- Serviço de diretório da Microsoft que
-centraliza a autenticação e gestão de utilizadores, computadores e
+**Active Directory (AD)** --- Serviço de diretório da Microsoft que centraliza a autenticação e gestão de utilizadores, computadores e
 grupos numa rede Windows. No projeto, está instalado no Windows Server
 2022 da zona Green MarteSuf, sob o domínio *AntMarMat.win*.
 
-**Apache** --- Servidor web open-source instalado no servidor CentOS da
-zona Orange VenusSuf, responsável por servir os três sites configurados
+**Apache** --- Servidor web open-source instalado no servidor CentOS da zona Orange VenusSuf, responsável por servir os três sites configurados
 no projeto.
 
 **B**
 
-**Brute Force** --- Técnica de ataque que consiste em tentar
-sistematicamente todas as combinações possíveis de credenciais até
+**Brute Force** --- Técnica de ataque que consiste em tentar sistematicamente todas as combinações possíveis de credenciais até
 encontrar a correta. No projeto, é simulada com a ferramenta Hydra
 contra o site com autenticação da zona Orange VenusSuf.
 
 **C**
 
-**CentOS** --- Distribuição Linux baseada em Red Hat Enterprise Linux,
-utilizada como servidor web na zona Orange VenusSuf. O servidor foi
+**CentOS** --- Distribuição Linux baseada em Red Hat Enterprise Linux, utilizada como servidor web na zona Orange VenusSuf. O servidor foi
 fornecido propositadamente desatualizado (novembro de 2019) para servir
 de alvo de análise de vulnerabilidades.
 
-**Certificado Self-Signed** --- Certificado SSL/TLS assinado pelo
-próprio servidor, sem intervenção de uma Autoridade de Certificação
+**Certificado Self-Signed** --- Certificado SSL/TLS assinado pelo próprio servidor, sem intervenção de uma Autoridade de Certificação
 reconhecida. Garante a encriptação do canal mas o browser apresenta um
 aviso de segurança. Utilizado no site HTTPS do servidor CentOS.
 
-**ChaCha20** --- Algoritmo de cifra simétrica utilizado pelo protocolo
-Wireguard para encriptação do túnel VPN. Mais eficiente que o AES em
+**ChaCha20** --- Algoritmo de cifra simétrica utilizado pelo protocolo Wireguard para encriptação do túnel VPN. Mais eficiente que o AES em
 dispositivos sem aceleração de hardware.
 
-**Cisco IOS** --- Sistema operativo dos equipamentos Cisco, incluindo o
-Router 4300 utilizado no projeto. Responsável pelo routing, NAT, DHCP,
+**Cisco IOS** --- Sistema operativo dos equipamentos Cisco, incluindo o Router 4300 utilizado no projeto. Responsável pelo routing, NAT, DHCP,
 ACLs e SSH da infraestrutura física.
 
-**CVE** *(Common Vulnerabilities and Exposures)* --- Sistema de
-identificação pública de vulnerabilidades de segurança conhecidas. Cada
+**CVE** *(Common Vulnerabilities and Exposures)* --- Sistema de identificação pública de vulnerabilidades de segurança conhecidas. Cada
 CVE tem um identificador único e um score de severidade (CVSS). O
 OpenVAS/Nessus identifica CVEs nas VMs analisadas.
 
-**CVSS** *(Common Vulnerability Scoring System)* --- Sistema de
-pontuação que classifica a severidade de vulnerabilidades numa escala de
+**CVSS** *(Common Vulnerability Scoring System)* --- Sistema de pontuação que classifica a severidade de vulnerabilidades numa escala de
 0 a 10. Utilizado nos relatórios do OpenVAS/Nessus para priorizar as
 vulnerabilidades encontradas.
 
 **D**
 
-**DC** *(Domain Controller)* --- Servidor que aloja e gere o Active
-Directory. No projeto, o Windows Server 2022 da zona Green MarteSuf
+**DC** *(Domain Controller)* --- Servidor que aloja e gere o Active Directory. No projeto, o Windows Server 2022 da zona Green MarteSuf
 desempenha este papel, sendo responsável pela autenticação de todos os
 utilizadores do domínio *AntMarMat.win*.
 
-**Defense in Depth** --- Estratégia de segurança que implementa
-múltiplas camadas de proteção independentes. No projeto: Router →
+**Defense in Depth** --- Estratégia de segurança que implementa múltiplas camadas de proteção independentes. No projeto: Router →
 Firewall → IDS/IPS → WAF → SIEM. A comprometição de uma camada não
 implica o acesso imediato às restantes.
 
-**DHCP** *(Dynamic Host Configuration Protocol)* --- Protocolo que
-atribui automaticamente configurações de rede aos clientes, incluindo
+**DHCP** *(Dynamic Host Configuration Protocol)* --- Protocolo que atribui automaticamente configurações de rede aos clientes, incluindo
 endereço IP, máscara de sub-rede, gateway e DNS. No projeto, o router
 Cisco serve DHCP para a VLAN 10 (Red) e o Windows Server 2022 serve DHCP
 para a zona Green MarteSuf.
 
-**DMZ** *(Demilitarized Zone)* --- Zona de rede intermédia entre a
-internet e a rede interna, destinada a albergar serviços acessíveis
+**DMZ** *(Demilitarized Zone)* --- Zona de rede intermédia entre a internet e a rede interna, destinada a albergar serviços acessíveis
 publicamente. No projeto, corresponde às zonas Orange de ambos os
 firewalls.
 
-**DNS** *(Domain Name System)* --- Sistema que traduz nomes de domínio
-em endereços IP. No projeto, o Windows Server 2022 atua como servidor
+**DNS** *(Domain Name System)* --- Sistema que traduz nomes de domínio em endereços IP. No projeto, o Windows Server 2022 atua como servidor
 DNS para a zona Green MarteSuf e para os clientes da VPN OpenVPN.
 
-**DOS** *(Denial of Service)* --- Ataque que visa tornar um serviço ou
-sistema indisponível através da sobrecarga com tráfego malicioso. No
+**DOS** *(Denial of Service)* --- Ataque que visa tornar um serviço ou sistema indisponível através da sobrecarga com tráfego malicioso. No
 projeto, é simulado com as ferramentas hping3 a partir do Kali Linux,
 sendo detetado pelo Snort e Suricata e bloqueado via Wazuh.
 
 **E**
 
-**Encapsulation dot1Q** --- Comando Cisco IOS que define o protocolo
-IEEE 802.1Q numa sub-interface, associando-a a uma VLAN específica.
+**Encapsulation dot1Q** --- Comando Cisco IOS que define o protocolo IEEE 802.1Q numa sub-interface, associando-a a uma VLAN específica.
 Fundamental para o funcionamento do modelo Router-on-a-Stick.
 
 **F**
 
-**Firewall** --- Sistema que controla o tráfego de rede com base em
-regras predefinidas. No projeto, são utilizadas duas firewalls: pfSense
+**Firewall** --- Sistema que controla o tráfego de rede com base em regras predefinidas. No projeto, são utilizadas duas firewalls: pfSense
 (VenusSuf) e OPNsense (MarteSuf), ambas com política de negação por
 defeito (*deny-by-default*).
 
-**Full Tunnel** --- Configuração VPN em que todo o tráfego do cliente,
-incluindo o acesso à internet, é encaminhado através do túnel. No
-projeto, aplicado às VPNs Wireguard e OpenVPN --- quando ativas, o
-tráfego de internet do Windows passa pelo respetivo firewall.
+**Full Tunnel** --- Configuração VPN em que todo o tráfego do cliente, incluindo o acesso à internet, é encaminhado através do túnel. No
+projeto, aplicado às VPNs Wireguard e OpenVPN --- quando ativas, o tráfego de internet do Windows passa pelo respetivo firewall.
 
-**FQDN** *(Fully Qualified Domain Name)* --- Nome de domínio completo
-que identifica inequivocamente um host na rede, composto pelo hostname e
+**FQDN** *(Fully Qualified Domain Name)* --- Nome de domínio completo que identifica inequivocamente um host na rede, composto pelo hostname e
 pelo domínio. Exemplo: *winserver.AntMarMat.win*. Necessário para a
 geração de chaves RSA no SSH do router Cisco.
 
 **G**
 
-**Gateway** --- Dispositivo que serve de ponto de saída de uma rede para
-outras redes. No projeto, o router Cisco é o gateway de todas as VLANs
+**Gateway** --- Dispositivo que serve de ponto de saída de uma rede para outras redes. No projeto, o router Cisco é o gateway de todas as VLANs
 para a internet, e cada firewall é o gateway das suas zonas Orange e
 Green.
 
-**GPO** *(Group Policy Object)* --- Conjunto de políticas de
-configuração aplicadas centralmente a utilizadores e computadores no
+**GPO** *(Group Policy Object)* --- Conjunto de políticas de configuração aplicadas centralmente a utilizadores e computadores no
 domínio Active Directory. Permite definir políticas de password,
 restrições de software e configurações de segurança.
 
-**Grafana** --- Plataforma open-source de visualização e análise de
-dados. No projeto, é utilizada em conjunto com o Loki para criar
+**Grafana** --- Plataforma open-source de visualização e análise de dados. No projeto, é utilizada em conjunto com o Loki para criar
 dashboards de monitorização e pesquisa de logs em tempo real.
 
 **H**
 
-**hping3** --- Ferramenta de linha de comando para geração de pacotes
-TCP/IP personalizados. No projeto, é utilizada pelo Kali Linux para
+**hping3** --- Ferramenta de linha de comando para geração de pacotes TCP/IP personalizados. No projeto, é utilizada pelo Kali Linux para
 simular ataques DOS e SYN flood contra as interfaces WAN dos firewalls.
 
-**HTTP Basic Auth** --- Mecanismo nativo de autenticação HTTP em que as
-credenciais são enviadas em Base64 no cabeçalho do pedido. Utilizado no
+**HTTP Basic Auth** --- Mecanismo nativo de autenticação HTTP em que as credenciais são enviadas em Base64 no cabeçalho do pedido. Utilizado no
 segundo site do servidor CentOS da zona Orange VenusSuf.
 
-**Hydra** --- Ferramenta de brute force para ataques a serviços de
-autenticação, incluindo HTTP, SSH e FTP. No projeto, é utilizada pelo
+**Hydra** --- Ferramenta de brute force para ataques a serviços de autenticação, incluindo HTTP, SSH e FTP. No projeto, é utilizada pelo
 Kali Linux para testar a robustez das passwords do site com autenticação
 do CentOS.
 
 **I**
 
-**IDS** *(Intrusion Detection System)* --- Sistema que monitoriza o
-tráfego de rede e gera alertas quando deteta atividade suspeita, sem
+**IDS** *(Intrusion Detection System)* --- Sistema que monitoriza o tráfego de rede e gera alertas quando deteta atividade suspeita, sem
 interferir no tráfego. No projeto, o Snort (VenusSuf) e o Suricata
 (MarteSuf) funcionam em modo IDS, com resposta ativa delegada ao Wazuh.
 
-**IKEv2** *(Internet Key Exchange version 2)* --- Protocolo de
-negociação de chaves utilizado pelo IPSec para estabelecer e manter
+**IKEv2** *(Internet Key Exchange version 2)* --- Protocolo de negociação de chaves utilizado pelo IPSec para estabelecer e manter
 associações de segurança. Utilizado na VPN site-to-site entre VenusSuf e
 MarteSuf.
 
-**IPS** *(Intrusion Prevention System)* --- Sistema que deteta e
-bloqueia tráfego suspeito de forma inline. Difere do IDS por intervir
+**IPS** *(Intrusion Prevention System)* --- Sistema que deteta e bloqueia tráfego suspeito de forma inline. Difere do IDS por intervir
 diretamente no fluxo de tráfego, em vez de apenas alertar.
 
-**IPSec** --- Suite de protocolos para encriptação e autenticação de
-tráfego ao nível IP. No projeto, utilizado para a VPN site-to-site entre
+**IPSec** --- Suite de protocolos para encriptação e autenticação de tráfego ao nível IP. No projeto, utilizado para a VPN site-to-site entre
 as firewalls VenusSuf e MarteSuf, com algoritmos AES-256, SHA-256 e DH
 Group 14.
 
-**IIS** *(Internet Information Services)* --- Servidor web da Microsoft
-instalado no Windows Server Core 2022 da zona Orange MarteSuf,
+**IIS** *(Internet Information Services)* --- Servidor web da Microsoft instalado no Windows Server Core 2022 da zona Orange MarteSuf,
 responsável por servir o site [*www.CET103.AMM*](http://www.CET103.AMM)
 com autenticação por base de dados.
 
 **K**
 
-**Kali Linux** --- Distribuição Linux especializada em testes de
-penetração e segurança ofensiva. No projeto, é a principal ferramenta da
+**Kali Linux** --- Distribuição Linux especializada em testes de penetração e segurança ofensiva. No projeto, é a principal ferramenta da
 zona Red, utilizada para port scans, ataques DOS, brute force e criação
 de reverse shells.
 
 **L**
 
-**Least Privilege** *(Princípio do Menor Privilégio)* --- Princípio de
-segurança que determina que cada utilizador, processo ou sistema deve
+**Least Privilege** *(Princípio do Menor Privilégio)* --- Princípio de segurança que determina que cada utilizador, processo ou sistema deve
 ter apenas os acessos estritamente necessários para desempenhar a sua
 função.
 
-**Loki** --- Base de dados de logs desenvolvida pela Grafana Labs,
-otimizada para armazenamento e pesquisa de grandes volumes de logs. No
+**Loki** --- Base de dados de logs desenvolvida pela Grafana Labs, otimizada para armazenamento e pesquisa de grandes volumes de logs. No
 projeto, recebe os logs enviados pelo Promtail e disponibiliza-os para
 consulta no Grafana.
 
 **M**
 
-**Metasploit** --- Framework open-source de testes de penetração que
-inclui ferramentas para exploração de vulnerabilidades, criação de
+**Metasploit** --- Framework open-source de testes de penetração que inclui ferramentas para exploração de vulnerabilidades, criação de
 payloads e gestão de sessões de acesso remoto. No projeto, utilizado
 pelo Kali para gerar e gerir a reverse shell contra o Windows 11 da zona
 Red.
 
-**ModSecurity** --- Motor de WAF open-source integrado no servidor Nginx
-da zona Orange MarteSuf. Inspeciona o tráfego HTTP/HTTPS e bloqueia
+**ModSecurity** --- Motor de WAF open-source integrado no servidor Nginx da zona Orange MarteSuf. Inspeciona o tráfego HTTP/HTTPS e bloqueia
 pedidos maliciosos com base no OWASP Core Rule Set.
 
-**msfvenom** --- Ferramenta do Metasploit para geração de payloads em
-múltiplos formatos. No projeto, utilizada para criar o executável de
+**msfvenom** --- Ferramenta do Metasploit para geração de payloads em múltiplos formatos. No projeto, utilizada para criar o executável de
 reverse shell (*reverse_tcp*) que é entregue e executado no Windows 11
 da zona Red.
 
 **N**
 
-**NAT** *(Network Address Translation)* --- Técnica que traduz endereços
-IP privados para um endereço público, permitindo que múltiplos hosts
+**NAT** *(Network Address Translation)* --- Técnica que traduz endereços IP privados para um endereço público, permitindo que múltiplos hosts
 partilhem uma única ligação à internet. No projeto, configurado no
 Router Cisco com PAT (*overload*).
 
-**Nessus / OpenVAS** --- Ferramentas de análise de vulnerabilidades que
-identificam CVEs, configurações incorretas e serviços desatualizados nas
+**Nessus / OpenVAS** --- Ferramentas de análise de vulnerabilidades que identificam CVEs, configurações incorretas e serviços desatualizados nas
 máquinas analisadas. No projeto, instaladas num servidor Fedora da zona
 Green VenusSuf e utilizadas para analisar todas as VMs do projeto.
 
-**Nginx** --- Servidor web e proxy reverso open-source. No projeto,
-utilizado na zona Orange MarteSuf em conjunto com o ModSecurity para
+**Nginx** --- Servidor web e proxy reverso open-source. No projeto, utilizado na zona Orange MarteSuf em conjunto com o ModSecurity para
 funcionar como WAF e reverse proxy para o servidor IIS.
 
-**Nikto** --- Scanner de vulnerabilidades web que identifica ficheiros e
-configurações inseguras em servidores HTTP. No projeto, utilizado pelo
+**Nikto** --- Scanner de vulnerabilidades web que identifica ficheiros e configurações inseguras em servidores HTTP. No projeto, utilizado pelo
 Kali Linux para analisar o servidor CentOS da zona Orange VenusSuf.
 
-**Nmap** --- Ferramenta de port scanning e deteção de sistemas e
-serviços numa rede. No projeto, utilizada pelo Kali Linux para
+**Nmap** --- Ferramenta de port scanning e deteção de sistemas e serviços numa rede. No projeto, utilizada pelo Kali Linux para
 reconhecimento das interfaces WAN dos firewalls, acionando os sistemas
 de deteção de intrusão.
 
-**NPS** *(Network Policy Server)* --- Serviço da Microsoft que
-implementa um servidor RADIUS, permitindo autenticação centralizada de
+**NPS** *(Network Policy Server)* --- Serviço da Microsoft que implementa um servidor RADIUS, permitindo autenticação centralizada de
 clientes VPN contra o Active Directory. No projeto, instalado no Windows
 Server 2022 da zona Green MarteSuf.
 
 **O**
 
-**OPNsense** --- Distribuição de firewall e router open-source baseada
-em FreeBSD. No projeto, utilizada como firewall MarteSuf, com zonas
+**OPNsense** --- Distribuição de firewall e router open-source baseada em FreeBSD. No projeto, utilizada como firewall MarteSuf, com zonas
 Orange (DMZ) e Green (LAN interna), IDS Suricata e VPN OpenVPN.
 
-**OpenVPN** --- Protocolo e software de VPN open-source que suporta
-autenticação por certificados e por credenciais via RADIUS. No projeto,
+**OpenVPN** --- Protocolo e software de VPN open-source que suporta autenticação por certificados e por credenciais via RADIUS. No projeto,
 implementado na MarteSuf como VPN roadwarrior com autenticação RADIUS
 contra o Active Directory, restrita ao grupo IT.
 
-**OU** *(Organizational Unit)* --- Contentor lógico do Active Directory
-que agrupa objetos como utilizadores e computadores, permitindo a
+**OU** *(Organizational Unit)* --- Contentor lógico do Active Directory que agrupa objetos como utilizadores e computadores, permitindo a
 aplicação de GPOs de forma granular. No projeto, as OUs estão
 organizadas por localização geográfica (Norte, Sul, Este) e departamento
 (IT, RH, Formação).
 
-**OWASP CRS** *(Core Rule Set)* --- Conjunto de regras open-source para
-o ModSecurity que protege contra os ataques mais comuns da web,
+**OWASP CRS** *(Core Rule Set)* --- Conjunto de regras open-source para o ModSecurity que protege contra os ataques mais comuns da web,
 incluindo os do OWASP Top 10. Utilizado no WAF da zona Orange MarteSuf.
 
-**OWASP Top 10** --- Lista das dez vulnerabilidades mais críticas em
-aplicações web, publicada pela Open Web Application Security Project.
+**OWASP Top 10** --- Lista das dez vulnerabilidades mais críticas em aplicações web, publicada pela Open Web Application Security Project.
 Inclui SQL Injection, XSS, autenticação quebrada, entre outras.
 
 **P**
 
-**PAT** *(Port Address Translation)* --- Variante do NAT em que
-múltiplos hosts partilham um único endereço IP público, diferenciados
+**PAT** *(Port Address Translation)* --- Variante do NAT em que múltiplos hosts partilham um único endereço IP público, diferenciados
 pelos números de porto TCP/UDP. Ativado com a keyword *overload* no
 Cisco IOS.
 
-**Payload** --- Código malicioso entregue ao sistema alvo durante um
-ataque. No projeto, refere-se ao executável gerado pelo msfvenom que, ao
+**Payload** --- Código malicioso entregue ao sistema alvo durante um ataque. No projeto, refere-se ao executável gerado pelo msfvenom que, ao
 ser corrido no Windows 11 da zona Red, estabelece uma reverse shell para
 o Kali Linux.
 
-**pfSense** --- Distribuição de firewall e router open-source baseada em
-FreeBSD. No projeto, utilizada como firewall VenusSuf, com zonas Orange
+**pfSense** --- Distribuição de firewall e router open-source baseada em FreeBSD. No projeto, utilizada como firewall VenusSuf, com zonas Orange
 (DMZ com CentOS) e Green (LAN interna com syslog-ng e OpenVAS), IDS
 Snort e VPN Wireguard.
 
-**Promtail** --- Agente de recolha de logs desenvolvido pela Grafana
-Labs. No projeto, lê os ficheiros de log gerados pelo syslog-ng e
+**Promtail** --- Agente de recolha de logs desenvolvido pela Grafana Labs. No projeto, lê os ficheiros de log gerados pelo syslog-ng e
 envia-os para o Loki com labels e metadados para posterior pesquisa no
 Grafana.
 
 **R**
 
-**RADIUS** *(Remote Authentication Dial-In User Service)* --- Protocolo
-de autenticação centralizada que permite verificar credenciais de
+**RADIUS** *(Remote Authentication Dial-In User Service)* --- Protocolo de autenticação centralizada que permite verificar credenciais de
 utilizadores num servidor central. No projeto, utilizado pelo OPNsense
 para autenticar os clientes OpenVPN contra o Active Directory através do
 NPS.
 
-**Reverse Shell** --- Técnica de ataque em que é a própria vítima que
-inicia a ligação para o atacante, contornando regras de firewall que
+**Reverse Shell** --- Técnica de ataque em que é a própria vítima que inicia a ligação para o atacante, contornando regras de firewall que
 bloqueiam ligações de entrada. No projeto, utilizada pelo Kali Linux
 para obter controlo remoto do Windows 11 da zona Red.
 
-**Router-on-a-Stick** --- Modelo de routing inter-VLAN onde um único
-router com uma única interface física utiliza sub-interfaces para
+**Router-on-a-Stick** --- Modelo de routing inter-VLAN onde um único router com uma única interface física utiliza sub-interfaces para
 encaminhar tráfego entre múltiplas VLANs. No projeto, implementado no
 Router Cisco 4300 com a interface G0/0/0 dividida em sub-interfaces para
 as VLANs 10, 20, 30 e 103.
 
-**RSA** --- Algoritmo de criptografia assimétrica utilizado na geração
-de chaves para o SSH. No projeto, são geradas chaves RSA de 2048 bits no
+**RSA** --- Algoritmo de criptografia assimétrica utilizado na geração de chaves para o SSH. No projeto, são geradas chaves RSA de 2048 bits no
 Router Cisco como pré-requisito para ativar o SSHv2.
 
 **S**
 
-**SIEM** *(Security Information and Event Management)* --- Sistema que
-agrega, correlaciona e analisa eventos de segurança de múltiplas fontes.
+**SIEM** *(Security Information and Event Management)* --- Sistema que agrega, correlaciona e analisa eventos de segurança de múltiplas fontes.
 No projeto, implementado com o Wazuh na zona Green MarteSuf.
 
-**Snort** --- Sistema de deteção de intrusão open-source baseado em
-regras. No projeto, instalado no pfSense VenusSuf para monitorizar o
+**Snort** --- Sistema de deteção de intrusão open-source baseado em regras. No projeto, instalado no pfSense VenusSuf para monitorizar o
 tráfego da interface WAN e detetar port scans e ataques DOS provenientes
 da zona Red.
 
-**SQL Injection** --- Técnica de ataque web que consiste em inserir
-código SQL malicioso em campos de entrada de uma aplicação, podendo
+**SQL Injection** --- Técnica de ataque web que consiste em inserir código SQL malicioso em campos de entrada de uma aplicação, podendo
 permitir acesso não autorizado à base de dados. Bloqueado pelo WAF
 ModSecurity na zona Orange MarteSuf.
 
-**SSH** *(Secure Shell)* --- Protocolo de acesso remoto seguro que
-encripta toda a comunicação. No projeto, utilizado para administração do
+**SSH** *(Secure Shell)* --- Protocolo de acesso remoto seguro que encripta toda a comunicação. No projeto, utilizado para administração do
 Router Cisco e dos Switches Huawei, restrito à VLAN 103 de gestão e
 configurado exclusivamente em SSHv2.
 
-**SSHv2** --- Versão 2 do protocolo SSH, que corrige vulnerabilidades da
-versão anterior, incluindo ataques man-in-the-middle. Explicitamente
+**SSHv2** --- Versão 2 do protocolo SSH, que corrige vulnerabilidades da versão anterior, incluindo ataques man-in-the-middle. Explicitamente
 forçado na configuração do Router Cisco.
 
-**Suricata** --- Sistema de deteção de intrusão open-source com suporte
-a processamento multi-thread. No projeto, instalado no OPNsense MarteSuf
+**Suricata** --- Sistema de deteção de intrusão open-source com suporte a processamento multi-thread. No projeto, instalado no OPNsense MarteSuf
 para monitorizar o tráfego e integrar com o Wazuh para resposta ativa a
 incidentes.
 
-**syslog-ng** --- Servidor de logs avançado que recebe, processa e
-armazena mensagens de log de múltiplos sistemas remotos. No projeto,
+**syslog-ng** --- Servidor de logs avançado que recebe, processa e armazena mensagens de log de múltiplos sistemas remotos. No projeto,
 instalado num servidor Debian da zona Green VenusSuf, atuando como hub
 central de logging de toda a infraestrutura.
 
 **T**
 
-**TLS** *(Transport Layer Security)* --- Protocolo de encriptação para
-comunicações na internet, utilizado no HTTPS. No projeto, configurado no
+**TLS** *(Transport Layer Security)* --- Protocolo de encriptação para comunicações na internet, utilizado no HTTPS. No projeto, configurado no
 terceiro site do servidor CentOS com um certificado self-signed.
 
-**Trunk Port** --- Porta de switch configurada para transportar tráfego
-de múltiplas VLANs com tags 802.1Q. No projeto, utilizada nas ligações
+**Trunk Port** --- Porta de switch configurada para transportar tráfego de múltiplas VLANs com tags 802.1Q. No projeto, utilizada nas ligações
 entre switches e entre o switch e o router.
 
 **V**
 
-**VLAN** *(Virtual Local Area Network)* --- Segmentação lógica de uma
-rede física em múltiplas redes virtuais independentes. No projeto, são
+**VLAN** *(Virtual Local Area Network)* --- Segmentação lógica de uma rede física em múltiplas redes virtuais independentes. No projeto, são
 utilizadas quatro VLANs: 10 (Red), 20 (VenusSuf), 30 (MarteSuf) e 103
 (Gestão).
 
-**VPN** *(Virtual Private Network)* --- Túnel encriptado sobre uma rede
-pública que permite comunicação segura como se os intervenientes
+**VPN** *(Virtual Private Network)* --- Túnel encriptado sobre uma rede pública que permite comunicação segura como se os intervenientes
 estivessem na mesma rede privada. No projeto, são implementadas três
 VPNs: Wireguard roadwarrior, OpenVPN roadwarrior e IPSec site-to-site.
 
-**VyOS** --- Router virtual open-source baseado em Linux, utilizado no
-projeto como ambiente de pré-produção doméstico para validar o plano de
+**VyOS** --- Router virtual open-source baseado em Linux, utilizado no projeto como ambiente de pré-produção doméstico para validar o plano de
 endereçamento IP e a lógica de routing antes da implementação no
 hardware físico Cisco.
 
 **W**
 
-**WAF** *(Web Application Firewall)* --- Firewall especializado em
-tráfego HTTP/HTTPS que inspeciona o conteúdo dos pedidos web e bloqueia
+**WAF** *(Web Application Firewall)* --- Firewall especializado em tráfego HTTP/HTTPS que inspeciona o conteúdo dos pedidos web e bloqueia
 ataques a aplicações web. No projeto, implementado com Nginx e
 ModSecurity na zona Orange MarteSuf.
 
-**Wazuh** --- Plataforma open-source de SIEM e XDR que recolhe e
-correlaciona eventos de segurança de múltiplos sistemas através de
+**Wazuh** --- Plataforma open-source de SIEM e XDR que recolhe e correlaciona eventos de segurança de múltiplos sistemas através de
 agentes. No projeto, instalado na zona Green MarteSuf, integrando
 alertas do Snort e Suricata e executando respostas ativas automáticas
 como o bloqueio de IPs atacantes por 10 minutos.
 
-**Wireshark** --- Analisador de tráfego de rede open-source que permite
-capturar e inspecionar pacotes em tempo real. No projeto, utilizado pelo
+**Wireshark** --- Analisador de tráfego de rede open-source que permite capturar e inspecionar pacotes em tempo real. No projeto, utilizado pelo
 Kali Linux para análise do tráfego de rede e verificação da encriptação
 TLS.
 
-**Wireguard** --- Protocolo VPN moderno e minimalista que utiliza
-criptografia de curva elíptica (Curve25519) e o algoritmo ChaCha20 para
+**Wireguard** --- Protocolo VPN moderno e minimalista que utiliza criptografia de curva elíptica (Curve25519) e o algoritmo ChaCha20 para
 encriptação. No projeto, implementado no pfSense VenusSuf como VPN
 roadwarrior para o Windows 10/11 da zona Red, com autenticação
 exclusivamente por chaves criptográficas.
 
 **X**
 
-**XSS** *(Cross-Site Scripting)* --- Técnica de ataque web que consiste
-em injetar código JavaScript malicioso numa página web, podendo ser
+**XSS** *(Cross-Site Scripting)* --- Técnica de ataque web que consiste em injetar código JavaScript malicioso numa página web, podendo ser
 executado no browser de outros utilizadores. Bloqueado pelo WAF
 ModSecurity com o OWASP CRS.
 
